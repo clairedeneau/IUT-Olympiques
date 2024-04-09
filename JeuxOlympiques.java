@@ -47,13 +47,13 @@ public class JeuxOlympiques{
         this.listePays.add(unPays);
     }
 
-    // public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Athlete> lesAthletes){
-    //     this.listePays.add(new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes);
-    // }
+    public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Athlete> lesAthletes){
+        this.listePays.add(new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes));
+    }
    
-    // public void ajoutePays(String nom){
-    //     this.listePays.add(new Pays(nom);
-    // }
+    public void ajoutePays(String nom){
+        this.listePays.add(new Pays(nom));
+    }
 
     
 }   
