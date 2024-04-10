@@ -66,6 +66,6 @@ public class Pays {
     }
 
     
-
+    public void test(){}
 
 }
