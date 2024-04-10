@@ -23,6 +23,7 @@ public class TestJeuxOlympiques {
         jo.ajoutePays(Belgique);
 
         assertEquals(test, jo.listePays);
+        Pays rpo = new Pays("Belgique");
     }
     
 }
