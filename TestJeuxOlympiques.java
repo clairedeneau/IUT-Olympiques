@@ -22,7 +22,8 @@ public class TestJeuxOlympiques {
         jo.ajoutePays(USA);
         jo.ajoutePays(Belgique);
 
-        assertEquals(test, jo.listePays);
+        assertEquals(test, jo.getListePays());
+
     }
     
 }
