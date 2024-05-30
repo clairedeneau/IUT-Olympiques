@@ -8,7 +8,7 @@ public class Athlete{
     private String prenom;
     private int nbVictoire;
     
-    public Athlete(int force, int agilite, int endurance, String sexe, String nom, String prenom, int nbVictoire) {
+    public Athlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
@@ -42,11 +42,11 @@ public class Athlete{
         this.endurance = endurance;
     }
 
-    public String getSexe() {
+    public char getSexe() {
         return sexe;
     }
 
-    public void setSexe(String sexe) {
+    public void setSexe(char sexe) {
         this.sexe = sexe;
     }
 
@@ -91,7 +91,7 @@ public class Athlete{
         Athlete autreAthlete = (Athlete) o;
 
         return this.force == autreAthlete.force || this.agilite == autreAthlete.agilite || this.endurance == autreAthlete.endurance ||
-        this.sexe.equals(autreAthlete.sexe) || this.nom.equals(autreAthlete.nom) || this.prenom.equals(autreAthlete.prenom) || this.nbVictoire == autreAthlete.nbVictoire; 
+        this.sexe == autreAthlete.sexe || this.nom.equals(autreAthlete.nom) || this.prenom.equals(autreAthlete.prenom) || this.nbVictoire == autreAthlete.nbVictoire; 
 
     }
 }
