@@ -3,7 +3,7 @@ public class Athlete {
     private int force;
     private int agilite;
     private int endurance;
-    private String sexe;
+    private char sexe;
     private String nom;
     private String prenom;
     private int nbVictoire;

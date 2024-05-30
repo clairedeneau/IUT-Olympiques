@@ -1,14 +1,11 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Equipe extends Athlete {
+public class Equipe {
     
     private List<Athlete> lesAthletes;
     private int nbVictoire;
 
-    public Equipe() {
-        this.lesAthletes = new ArrayList<>();
-    }
 
     public Equipe(List<Athlete> listeAthletes, int victoire) {
         this.lesAthletes = listeAthletes;
@@ -16,8 +13,8 @@ public class Equipe extends Athlete {
 
     }
 
-    public void ajouterAthlete(int force, int agilite, int endurance, String sexe, char nom, String prenom, int victoire) {
-        this.lesAthletes.add(new Athelte(force, agilite, endurance, sexe, nom, prenom, victoire));
+    public void ajouterAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int victoire) {
+        this.lesAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire));
     }
 
     public void ajouterAthlete(Athlete athlete) {
@@ -59,15 +56,15 @@ public class Equipe extends Athlete {
         }
 
 
-        Equipe<Athelte> autreEquipe = (Equipe) o;
+        Equipe autreEquipe = (Equipe) o;
 
 
-        if (o.size() != this.size()) {
+        if (autreEquipe.lesAthletes.size() != this.lesAthletes.size()) {
             return false;
         }
 
         for (Athlete athlete : lesAthletes) {
-            for (Athlete a : autreEquipe) {
+            for (Athlete a : autreEquipe.lesAthletes) {
                 if (!(athlete.equals(a))) {
                     return false;
                 }
