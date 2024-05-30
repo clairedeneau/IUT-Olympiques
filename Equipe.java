@@ -10,9 +10,10 @@ public class Equipe extends Athlete {
         this.lesAthletes = new ArrayList<>();
     }
 
-    public Equipe(List<Athlete> listeAthletes, int nbVictoire) {
+    public Equipe(List<Athlete> listeAthletes, int victoire) {
         this.lesAthletes = listeAthletes;
-        this.nbVictoire = nbVictoire;
+        this.nbVictoire = victoire;
+
     }
 
     public void ajouterAthlete(int force, int agilite, int endurance, String sexe, char nom, String prenom, int victoire) {
@@ -43,5 +44,39 @@ public class Equipe extends Athlete {
         this.nbVictoire = nbVictoire;
     }
 
-    
+    @Override
+    public boolean equals (Object o) {
+        if (o == null) {
+            return false;
+        }
+
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Equipe)) {
+            return false;
+        }
+
+
+        Equipe<Athelte> autreEquipe = (Equipe) o;
+
+
+        if (o.size() != this.size()) {
+            return false;
+        }
+
+        for (Athlete athlete : lesAthletes) {
+            for (Athlete a : autreEquipe) {
+                if (!(athlete.equals(a))) {
+                    return false;
+                }
+            }
+            return false;
+        }
+        
+        return autreEquipe.nbVictoire == this.nbVictoire;
+        
+
+    }
 }

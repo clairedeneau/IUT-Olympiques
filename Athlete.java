@@ -1,4 +1,4 @@
-public class Athlete{
+public class Athlete {
     
     private int force;
     private int agilite;
