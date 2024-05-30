@@ -1,36 +1,20 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 public abstract class Sport {
 
-    protected String sexe;
     protected int distance;
     protected String nom;
     protected int tailleEquipe;
-    protected HashMap<Integer, Athlete> classement;
     protected int largeurTerrain;
     protected int longueurTerrain;
     protected int placeSpectateur;
 
-    public Sport(String sexe, int distance, String nom, int tailleEquipe, HashMap<Integer, Athlete> classement, int largeurTerrain, int longueurTerrain, int placeSpectateur){
-        this.sexe = sexe;
+    public Sport(int distance, String nom, int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur){
+        
         this.distance = distance;
         this.nom = nom;
         this.tailleEquipe = tailleEquipe;
-        this.classement = new HashMap<Integer, Athlete>();
         this.largeurTerrain = largeurTerrain;
         this.longueurTerrain = longueurTerrain;
         this.placeSpectateur = placeSpectateur;
-    }
-
-    public String getSexe() {
-        return sexe;
-    }
-
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
     }
 
     public int getDistance() {
