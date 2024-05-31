@@ -7,6 +7,12 @@ public class Equipe {
     private int nbVictoire;
 
 
+    public Equipe() {
+        this.lesAthletes = new ArrayList<>();
+        this.nbVictoire = 0;
+
+    }
+    
     public Equipe(List<Athlete> listeAthletes, int victoire) {
         this.lesAthletes = listeAthletes;
         this.nbVictoire = victoire;
