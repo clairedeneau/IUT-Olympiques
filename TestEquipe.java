@@ -13,10 +13,10 @@ public class TestEquipe {
     @Test
     public void testAjouteAthlete() {
         Equipe g2 = new Equipe();
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         g2.ajouterAthlete(jean);
-        g2.ajouterAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
-        Athlete test2 = new Athlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        g2.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
+        Athlete test2 = new Athlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         List<Athlete> test = new ArrayList<>();
         test.add(jean);
         test.add(test2);
@@ -26,11 +26,11 @@ public class TestEquipe {
     @Test
     public void testRetirerAthlete() {
         Equipe g2 = new Equipe();
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         g2.ajouterAthlete(jean);
-        g2.ajouterAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        g2.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         g2.retirerAthlete(jean);
-        g2.retirerAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        g2.retirerAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         List<Athlete> test = new ArrayList<>();
 
         assertEquals(test, g2.getLesAthletes());
@@ -45,8 +45,8 @@ public class TestEquipe {
     @Test 
     public void testSetLesAthletes() {
         Equipe g2 = new Equipe();
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
-        Athlete test = new Athlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        Athlete test = new Athlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         List<Athlete> test2 = new ArrayList<>();
         test2.add(test);
         test2.add(jean);
@@ -68,15 +68,17 @@ public class TestEquipe {
 
     @Test
     public void testEquals() {
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
-        Athlete test = new Athlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        Athlete test = new Athlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
 
         List<Athlete> goat = new ArrayList<>();
-        goat.ajouterAthlete(jean);
-        goat.ajouterAthlete(test);
+        goat.add(jean);
+        goat.add(test);
 
         Equipe g2 = new Equipe(goat, 5);
         Equipe Fnatic = new Equipe(goat, 5);
+        System.out.println(g2.getLesAthletes());
+        System.out.println(Fnatic.getLesAthletes());
         assertEquals(true, g2.equals(Fnatic));
     }
 }

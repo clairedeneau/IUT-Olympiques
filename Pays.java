@@ -26,7 +26,7 @@ public class Pays {
     }
 
     public void ajouterAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
-        this.listeAthletes.add(force, agilite, endurance, sexe, nom, prenom, nbVictoire);
+        this.listeAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, nbVictoire));
     }
 
     public void ajouterAthlete(Athlete unAthlete) {
@@ -38,7 +38,7 @@ public class Pays {
     }
 
     public void retirerAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
-        this.listeAthletes.remove(force, agilite, endurance, sexe, nom, prenom, nbVictoire);
+        this.listeAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, nbVictoire));
     }
 
     public int getNbMedailleOr() {

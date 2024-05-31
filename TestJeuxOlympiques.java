@@ -13,18 +13,18 @@ public class TestJeuxOlympiques {
 
     @Test
     public void testGetDebut() {
-        assertEquals("18/11/2024", jo.getDateDeDebut());
+        assertEquals("18/11/2024", jo2024.getDateDeDebut());
     }
 
     @Test
     public void testGetFin() {
-        assertEquals("25/12/2024", jo.getDateDeFin());
+        assertEquals("25/12/2024", jo2024.getDateDeFin());
     }
 
     @Test
     public void testGetListePays() {
         List<Pays> test = new ArrayList<>();
-        assertEquals(test, jo.getListePays());
+        assertEquals(test, jo2024.getListePays());
     }
 
     @Test
@@ -36,20 +36,20 @@ public class TestJeuxOlympiques {
         test.add(France);
         test.add(USA);
         test.add(Belgique);
-        jo.setListePays(test);
-        assertEquals(test, jo.getListePays());
+        jo2024.setListePays(test);
+        assertEquals(test, jo2024.getListePays());
     }
 
     @Test
     public void testSetDateDebut() {
-        jo.setDateDeDebut("1/1/2025");
-        assertEquals("1/1/2025", jo.getDateDeDebut());
+        jo2024.setDateDeDebut("1/1/2025");
+        assertEquals("1/1/2025", jo2024.getDateDeDebut());
     }
 
     @Test
     public void testSetDateFin() {
-        jo.setDateDeFin("26/11/2025");
-        assertEquals("26/11/2025", jo.getDateDeFin());
+        jo2024.setDateDeFin("26/11/2025");
+        assertEquals("26/11/2025", jo2024.getDateDeFin());
     }
 
 
@@ -61,12 +61,13 @@ public class TestJeuxOlympiques {
         Pays Belgique = new Pays("Belgique");
         test.add(France);
         test.add(USA);
+        List<Athlete> test2 = new ArrayList<>();
         test.add(Belgique);
         JeuxOlympiques jo = new JeuxOlympiques("demain","dans 2 jours");
         jo.ajoutePays(France);
         jo.ajoutePays(USA);
-        List<Athlete> test2 = new ArrayList<>();
-        jo.ajoutePays(0, 0, 0, "Belgique", test2);
+        
+        jo.ajoutePays(Belgique);
 
         assertEquals(test, jo.getListePays());
         
@@ -81,11 +82,9 @@ public class TestJeuxOlympiques {
         jo.ajoutePays(France);
         jo.ajoutePays(USA);
         List<Athlete> test2 = new ArrayList<>();
-        jo.ajoutePays(0, 0, 0, "Belgique", test2);
         
         jo.retierPays(France);
         jo.retierPays(USA);
-        jo.retierPays(0, 0, 0, "Belgique", test2);
         assertEquals(test, jo.getListePays());       
     }
 }

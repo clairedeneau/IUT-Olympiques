@@ -8,9 +8,9 @@ import java.util.List;
 
 public class TestAthlete {
     
-    Athlete test = new Athlete(503, 6, 7, "F", "ezaeza", "Jezaezaeean", 0);
-    Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
-    Athlete matheo = new Athlete(5, 6, 7, "H", "AABBD", "Matheo", 0);
+    Athlete test = new Athlete(503, 6, 7, 'F', "ezaeza", "Jezaezaeean", 0);
+    Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+    Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0);
 
     @Test
     public void testGetForce() {
@@ -41,19 +41,19 @@ public class TestAthlete {
 
     @Test
     public void testSetEndurance() {
-        jean.setAgilite(12);
+        jean.setEndurance(12);
         assertEquals(12, jean.getEndurance());
     }
 
     @Test
     public void testGetSexe() {
-        assertEquals("H", jean.getSexe());
+        assertEquals('H', jean.getSexe());
     }
 
     @Test
     public void testSetSexe() {
-        test.setSexe("H");
-        assertEquals("H", test.getSexe());
+        test.setSexe('H');
+        assertEquals('H', test.getSexe());
     }
 
     @Test
@@ -69,7 +69,7 @@ public class TestAthlete {
 
     @Test
     public void getPrenom() {
-        assertEquals("Jean", jean.getNom());
+        assertEquals("Jean", jean.getPrenom());
     }
 
     @Test
@@ -91,8 +91,8 @@ public class TestAthlete {
 
     @Test
     public void testEquals() {
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
-        Athlete test = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        Athlete test = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         assertEquals(true, jean.equals(test));
     }
 }

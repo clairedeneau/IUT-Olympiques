@@ -54,9 +54,9 @@ public class TestPays {
     @Test
     public void testSetListeAthletes() {
         List<Athlete> lesAthletes = new ArrayList<>();
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
-        Athlete matheo = new Athlete(5, 6, 7, "H", "AABBD", "Matheo", 0);
-        Athlete arthur = new Athlete(5, 6, 7, "H", "ezaeaezae", "Arthur", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0);
+        Athlete arthur = new Athlete(5, 6, 7, 'H', "ezaeaezae", "Arthur", 0);
         lesAthletes.add(jean);
         lesAthletes.add(matheo);
         lesAthletes.add(arthur);
@@ -68,10 +68,10 @@ public class TestPays {
     @Test
     public void testAjouteAthlete() {
         Pays luxembourg = new Pays("Luxembourg");
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         luxembourg.ajouterAthlete(jean);
-        luxembourg.ajouterAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
-        Athlete test2 = new Athlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        luxembourg.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
+        Athlete test2 = new Athlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         List<Athlete> test = new ArrayList<>();
         test.add(jean);
         test.add(test2);
@@ -81,11 +81,11 @@ public class TestPays {
     @Test
     public void testRetirerAthlete() {
         Pays luxembourg = new Pays("Luxembourg");
-        Athlete jean = new Athlete(5, 6, 7, "H", "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         luxembourg.ajouterAthlete(jean);
-        luxembourg.ajouterAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        luxembourg.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         luxembourg.retirerAthlete(jean);
-        luxembourg.retirerAthlete(51, 56, 47, "H", "Pizaeazeerre", "Lcaz", 5);
+        luxembourg.retirerAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
         List<Athlete> test = new ArrayList<>();
 
         assertEquals(test, luxembourg.getListeAthletes());
