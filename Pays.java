@@ -25,6 +25,22 @@ public class Pays {
         this.nbMedailleBronze = 0;
     }
 
+    public void ajouterAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
+        this.listeAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, nbVictoire));
+    }
+
+    public void ajouterAthlete(Athlete unAthlete) {
+        this.listeAthletes.add(unAthlete);
+    }
+
+    public void retirerAthlete(Athlete unAthlete) {
+        this.listeAthletes.remove(unAthlete);
+    }
+
+    public void retirerAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
+        this.listeAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, nbVictoire));
+    }
+
     public int getNbMedailleOr() {
         return nbMedailleOr;
     }

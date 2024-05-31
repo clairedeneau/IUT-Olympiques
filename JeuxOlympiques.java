@@ -58,6 +58,7 @@ public class JeuxOlympiques{
     public void retierPays(Pays pays){
         this.listePays.remove(pays);
     }
+    
 
 
     
