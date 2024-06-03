@@ -1,4 +1,4 @@
-public class Athlete {
+public class Athlete extends Util{
     
     private int force;
     private int agilite;
@@ -66,10 +66,12 @@ public class Athlete {
         this.prenom = prenom;
     }
 
+    @Override
     public int getNbVictoire() {
         return nbVictoire;
     }
 
+    @Override
     public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }

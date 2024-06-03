@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Equipe {
+public class Equipe extends Util{
     
     private List<Athlete> lesAthletes;
     private int nbVictoire;
@@ -43,10 +43,12 @@ public class Equipe {
         this.lesAthletes = lesAthletes;
     }
 
+    @Override
     public int getNbVictoire() {
         return nbVictoire;
     }
 
+    @Override
     public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
     }
