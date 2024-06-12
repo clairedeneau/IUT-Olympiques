@@ -13,6 +13,11 @@ public class TestAthlete {
     Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0);
 
     @Test
+    public void testParticiper() {
+        assertEquals(18, jean.participer());
+    }
+
+    @Test
     public void testGetForce() {
         assertEquals(5, jean.getForce());
     }

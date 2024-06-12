@@ -11,6 +11,15 @@ public class TestEquipe {
     Equipe lesGoats = new Equipe();
 
     @Test
+    public void testParticiper() {
+        Equipe g2 = new Equipe();
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        g2.ajouterAthlete(jean);
+        g2.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
+        assertEquals(172, g2.participer());
+    }
+    
+    @Test
     public void testAjouteAthlete() {
         Equipe g2 = new Equipe();
         Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
