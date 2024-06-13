@@ -46,49 +46,52 @@ public class TestPays {
     }
 
     @Test
-    public void testGetListeAthletes() {
-        List<Athlete> test = new ArrayList<>();
-        assertEquals(test, france.getListeAthletes());
+    public void testGetListeEquipe() {
+        List<Equipe> test = new ArrayList<>();
+        assertEquals(test, france.getListeEquipe());
     }
 
     @Test
-    public void testSetListeAthletes() {
-        List<Athlete> lesAthletes = new ArrayList<>();
+    public void testSetListeEquipe() {
+        List<Equipe> lesAthletes = new ArrayList<>();
         Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
         Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0);
         Athlete arthur = new Athlete(5, 6, 7, 'H', "ezaeaezae", "Arthur", 0);
-        lesAthletes.add(jean);
-        lesAthletes.add(matheo);
-        lesAthletes.add(arthur);
+        Equipe test = new ArrayList<>();
+        test.add(jean);
+        test.add(matheo);
+        test.add(arthur);
+        lesAthletes.add(test);
         france.setListeAthletes(lesAthletes);
 
-        assertEquals(lesAthletes, france.getListeAthletes());
+        assertEquals(lesAthletes, france.getListeEquipe());
     }
 
     @Test
-    public void testAjouteAthlete() {
-        Pays luxembourg = new Pays("Luxembourg");
-        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
-        luxembourg.ajouterAthlete(jean);
-        luxembourg.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
-        Athlete test2 = new Athlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
-        List<Athlete> test = new ArrayList<>();
-        test.add(jean);
-        test.add(test2);
-        assertEquals(test, luxembourg.getListeAthletes());
+    public void testAjouteEquipe() {
+        Pays test = new Pays("Test");
+        List<Equipe> res = new ArrayList<>();
+        List<Athlete> lesAthletes = new ArrayList<>();
+        res.add(new Equipe("lucas"));
+        test.ajouterEquipe("lucas");
+
+        test.ajouterEquipe("lucas", lesAthletes, 0);
+        res.add(new Equipe("lucas", lesAthletes, 0));
+
+        assertEquals(res, test.getListeEquipe());
     }
 
     @Test
     public void testRetirerAthlete() {
         Pays luxembourg = new Pays("Luxembourg");
-        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
-        luxembourg.ajouterAthlete(jean);
-        luxembourg.ajouterAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
-        luxembourg.retirerAthlete(jean);
-        luxembourg.retirerAthlete(51, 56, 47, 'H', "Pizaeazeerre", "Lcaz", 5);
-        List<Athlete> test = new ArrayList<>();
+        List<Equipe> atl = new ArrayList<>();
+        luxembourg.ajouterEquipe("lucas");
+        luxembourg.retirerEquipe("lucas");
 
-        assertEquals(test, luxembourg.getListeAthletes());
+        luxembourg.ajouterEquipe("lucas", atl, 0);
+        luxembourg.retirerEquipe(new Equipe("lucas", atl, 0));
+
+        assertEquals(atl, luxembourg.getListeEquipe());
     }
 
     @Test

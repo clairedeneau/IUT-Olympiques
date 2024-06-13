@@ -11,8 +11,8 @@ public class JeuxOlympiques {
      * Constructeur de la classe JeuxOlympiques avec les dates de début et de fin spécifiées.
      * Initialise une liste vide de pays participants.
      *
-     * @param debut La date de début des jeux olympiques.
-     * @param fin   La date de fin des jeux olympiques.
+     * @param debut La date de début des jeux olympiques (au format "YYYY-MM-DD").
+     * @param fin   La date de fin des jeux olympiques (au format "YYYY-MM-DD").
      */
     public JeuxOlympiques(String debut, String fin) {
         this.dateDeDebut = debut;
@@ -23,8 +23,8 @@ public class JeuxOlympiques {
     /**
      * Constructeur de la classe JeuxOlympiques avec les dates et une liste de pays spécifiés.
      *
-     * @param debut    La date de début des jeux olympiques.
-     * @param fin      La date de fin des jeux olympiques.
+     * @param debut    La date de début des jeux olympiques (au format "YYYY-MM-DD").
+     * @param fin      La date de fin des jeux olympiques (au format "YYYY-MM-DD").
      * @param lesPays  La liste des pays participants.
      */
     public JeuxOlympiques(String debut, String fin, List<Pays> lesPays) {
@@ -36,7 +36,7 @@ public class JeuxOlympiques {
     /**
      * Retourne la date de début des jeux olympiques.
      *
-     * @return La date de début des jeux olympiques.
+     * @return La date de début des jeux olympiques (au format "YYYY-MM-DD").
      */
     public String getDateDeDebut() {
         return dateDeDebut;
@@ -45,7 +45,7 @@ public class JeuxOlympiques {
     /**
      * Modifie la date de début des jeux olympiques.
      *
-     * @param dateDeDebut La nouvelle date de début des jeux olympiques.
+     * @param dateDeDebut La nouvelle date de début des jeux olympiques (au format "YYYY-MM-DD").
      */
     public void setDateDeDebut(String dateDeDebut) {
         this.dateDeDebut = dateDeDebut;
@@ -54,7 +54,7 @@ public class JeuxOlympiques {
     /**
      * Retourne la date de fin des jeux olympiques.
      *
-     * @return La date de fin des jeux olympiques.
+     * @return La date de fin des jeux olympiques (au format "YYYY-MM-DD").
      */
     public String getDateDeFin() {
         return dateDeFin;
@@ -63,7 +63,7 @@ public class JeuxOlympiques {
     /**
      * Modifie la date de fin des jeux olympiques.
      *
-     * @param dateDeFin La nouvelle date de fin des jeux olympiques.
+     * @param dateDeFin La nouvelle date de fin des jeux olympiques (au format "YYYY-MM-DD").
      */
     public void setDateDeFin(String dateDeFin) {
         this.dateDeFin = dateDeFin;
@@ -91,9 +91,14 @@ public class JeuxOlympiques {
      * Ajoute un pays à la liste des pays participants.
      *
      * @param unPays Le pays à ajouter.
+     * @return true si le pays a été ajouté avec succès, false s'il était déjà présent.
      */
-    public void ajoutePays(Pays unPays) {
-        this.listePays.add(unPays);
+    public boolean ajoutePays(Pays unPays) {
+        if (!(this.listePays.contains(unPays))) {
+            this.listePays.add(unPays);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -106,7 +111,10 @@ public class JeuxOlympiques {
      * @param lesAthletes La liste des athlètes du pays.
      */
     public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Athlete> lesAthletes) {
-        this.listePays.add(new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes));
+        Pays nouveauPays = new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes);
+        if (!(this.listePays.contains(nouveauPays))) {
+            this.listePays.add(nouveauPays);
+        }
     }
 
     /**
