@@ -74,20 +74,20 @@ public class Executable {
         epreuve2.participer(equipeUSA, 1, 13.2);
 
         // Affichage des résultats
-        System.out.println("Résultats des Jeux Olympiques " + jeuxOlympiques.getDateDeDebut() + " - " + jeuxOlympiques.getDateDeFin());
-        System.out.println("---------------------------------------------");
+        //System.out.println("Résultats des Jeux Olympiques " + jeuxOlympiques.getDateDeDebut() + " - " + jeuxOlympiques.getDateDeFin());
+        //System.out.println("---------------------------------------------");
  
-        for (Pays pays : jeuxOlympiques.getListePays()) {
-            System.out.println("Pays : " + pays.getNom());
-            for (Equipe equipe : pays.getListeEquipe()) {
-                System.out.println("\tEquipe : Victoires - " + equipe.getNbVictoire());
-                System.out.println("\tAthlètes : ");
-                for (Athlete athlete : equipe.getLesAthletes()) {
-                    System.out.println("\t\t" + athlete.getPrenom() + " " + athlete.getNom() + " - Victoires : " + athlete.getNbVictoire());
-                }
-            }
-            System.out.println("---------------------------------------------");
-         }
+        //for (Pays pays : jeuxOlympiques.getListePays()) {
+            //System.out.println("Pays : " + pays.getNom());
+            //for (Equipe equipe : pays.getListeEquipe()) {
+                //System.out.println("\tEquipe : Victoires - " + equipe.getNbVictoire());
+                //System.out.println("\tAthlètes : ");
+                //for (Athlete athlete : equipe.getLesAthletes()) {
+                    //System.out.println("\t\t" + athlete.getPrenom() + " " + athlete.getNom() + " - Victoires : " + athlete.getNbVictoire());
+                //}
+            //}
+            //System.out.println("---------------------------------------------");
+         //}
     }
 
 }
