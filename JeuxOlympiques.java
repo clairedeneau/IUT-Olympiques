@@ -135,4 +135,11 @@ public class JeuxOlympiques {
     public void retierPays(Pays pays) {
         this.listePays.remove(pays);
     }
+
+    @Override
+    public String toString() {
+        return "JeuxOlympiques [dateDeDebut=" + dateDeDebut + ", dateDeFin=" + dateDeFin + ", listePays=" + listePays
+                + "]";
+    }
+    
 }

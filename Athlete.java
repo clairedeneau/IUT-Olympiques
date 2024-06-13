@@ -211,4 +211,12 @@ public class Athlete implements Util {
                this.prenom.equals(autreAthlete.prenom) && 
                this.nbVictoire == autreAthlete.nbVictoire;
     }
+
+    @Override
+    public String toString() {
+        return "Athlete [force=" + force + ", agilite=" + agilite + ", endurance=" + endurance + ", sexe=" + sexe
+                + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
+    }
+
+    
 }

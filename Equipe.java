@@ -188,4 +188,10 @@ public class Equipe implements Util {
     public void setNomEquipe(String nomEquipe) {
         this.nomEquipe = nomEquipe;
     }
+
+    @Override
+    public String toString() {
+        return "Equipe [nomEquipe=" + nomEquipe + ", lesAthletes=" + lesAthletes + ", nbVictoire=" + nbVictoire + "]";
+    }
+   
 }

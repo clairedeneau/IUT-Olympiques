@@ -194,4 +194,11 @@ public class Pays {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Pays [nbMedailleOr=" + nbMedailleOr + ", nbMedailleArgent=" + nbMedailleArgent + ", nbMedailleBronze="
+                + nbMedailleBronze + ", nom=" + nom + ", listeEquipes=" + listeEquipes + "]";
+    }
+    
 }
