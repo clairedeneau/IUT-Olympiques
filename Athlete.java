@@ -1,4 +1,4 @@
-public class Athlete extends Util {
+public class Athlete implements Util {
 
     private int force;
     private int agilite;
@@ -163,8 +163,8 @@ public class Athlete extends Util {
      * @return Une note représentant la performance de l'athlète.
      */
     @Override
-    public float participer() {
-        return this.getAgilite() + this.getEndurance() + this.getForce();
+    public int participer() {
+        return this.agilite + this.endurance + this.force;
     }
 
     /**

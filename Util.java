@@ -1,5 +1,5 @@
 public interface Util{
     public int getNbVictoire();
-    public int setNbVictoire(int nbVictoire);
-    public float participer();
+    public void setNbVictoire(int nbVictoire);
+    public int participer();
 }
