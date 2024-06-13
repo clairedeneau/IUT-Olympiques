@@ -3,14 +3,18 @@ import java.util.ArrayList;
 
 public class Equipe implements Util {
     
+    private String nomEquipe;
     private List<Athlete> lesAthletes;
     private int nbVictoire;
 
     /**
-     * Constructeur par défaut de la classe Equipe.
+     * Constructeur de la classe Equipe.
      * Initialise une nouvelle équipe avec une liste vide d'athlètes et un nombre de victoires à zéro.
+     *
+     * @param nomEquipe Le nom de l'équipe.
      */
-    public Equipe() {
+    public Equipe(String nomEquipe) {
+        this.nomEquipe = nomEquipe;
         this.lesAthletes = new ArrayList<>();
         this.nbVictoire = 0;
     }
@@ -18,10 +22,12 @@ public class Equipe implements Util {
     /**
      * Constructeur de la classe Equipe avec une liste d'athlètes et un nombre de victoires spécifiés.
      *
+     * @param nomEquipe     Le nom de l'équipe.
      * @param listeAthletes La liste des athlètes de l'équipe.
      * @param victoire      Le nombre de victoires de l'équipe.
      */
-    public Equipe(List<Athlete> listeAthletes, int victoire) {
+    public Equipe(String nomEquipe, List<Athlete> listeAthletes, int victoire) {
+        this.nomEquipe = nomEquipe;
         this.lesAthletes = listeAthletes;
         this.nbVictoire = victoire;
     }
@@ -37,7 +43,7 @@ public class Equipe implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param victoire   Le nombre de victoires de l'athlète.
      */
-    public void ajouterAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int victoire) {
+    public void ajouterAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire) {
         this.lesAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire));
     }
 
@@ -70,7 +76,7 @@ public class Equipe implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param victoire   Le nombre de victoires de l'athlète.
      */
-    public void retirerAthlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int victoire) {
+    public void retirerAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire) {
         this.lesAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire));
     }
 
@@ -164,4 +170,28 @@ public class Equipe implements Util {
         }
         return res;
     }
+
+    /**
+     * Retourne le nom de l'équipe.
+     *
+     * @return Le nom de l'équipe.
+     */
+    public String getNomEquipe() {
+        return nomEquipe;
+    }
+
+    /**
+     * Modifie le nom de l'équipe.
+     *
+     * @param nomEquipe Le nouveau nom de l'équipe.
+     */
+    public void setNomEquipe(String nomEquipe) {
+        this.nomEquipe = nomEquipe;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipe [nomEquipe=" + nomEquipe + ", lesAthletes=" + lesAthletes + ", nbVictoire=" + nbVictoire + "]";
+    }
+   
 }

@@ -1,8 +1,8 @@
 public class Athlete implements Util {
-
-    private int force;
-    private int agilite;
-    private int endurance;
+    
+    private double force;
+    private double agilite;
+    private double endurance;
     private char sexe;
     private String nom;
     private String prenom;
@@ -10,7 +10,7 @@ public class Athlete implements Util {
 
     /**
      * Constructeur de la classe Athlete.
-     *
+     * 
      * @param force      La force de l'athlète.
      * @param agilite    L'agilité de l'athlète.
      * @param endurance  L'endurance de l'athlète.
@@ -19,10 +19,28 @@ public class Athlete implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
      */
-    public Athlete(int force, int agilite, int endurance, char sexe, String nom, String prenom, int nbVictoire) {
+    public Athlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int nbVictoire) {
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
+        this.sexe = sexe;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.nbVictoire = nbVictoire;
+    }
+    
+    /**
+     * Constructeur de la classe Athlete avec des valeurs aléatoires pour la force, l'agilité et l'endurance.
+     * 
+     * @param sexe       Le sexe de l'athlète.
+     * @param nom        Le nom de l'athlète.
+     * @param prenom     Le prénom de l'athlète.
+     * @param nbVictoire Le nombre de victoires de l'athlète.
+     */
+    public Athlete(char sexe, String nom, String prenom, int nbVictoire) {
+        this.force = Math.random() * 100;
+        this.agilite = Math.random() * 100;
+        this.endurance = Math.random() * 100;
         this.sexe = sexe;
         this.nom = nom;
         this.prenom = prenom;
@@ -34,7 +52,7 @@ public class Athlete implements Util {
      *
      * @return La force de l'athlète.
      */
-    public int getForce() {
+    public double getForce() {
         return force;
     }
 
@@ -43,7 +61,7 @@ public class Athlete implements Util {
      *
      * @param force La nouvelle force de l'athlète.
      */
-    public void setForce(int force) {
+    public void setForce(double force) {
         this.force = force;
     }
 
@@ -52,7 +70,7 @@ public class Athlete implements Util {
      *
      * @return L'agilité de l'athlète.
      */
-    public int getAgilite() {
+    public double getAgilite() {
         return agilite;
     }
 
@@ -61,7 +79,7 @@ public class Athlete implements Util {
      *
      * @param agilite La nouvelle agilité de l'athlète.
      */
-    public void setAgilite(int agilite) {
+    public void setAgilite(double agilite) {
         this.agilite = agilite;
     }
 
@@ -70,7 +88,7 @@ public class Athlete implements Util {
      *
      * @return L'endurance de l'athlète.
      */
-    public int getEndurance() {
+    public double getEndurance() {
         return endurance;
     }
 
@@ -79,7 +97,7 @@ public class Athlete implements Util {
      *
      * @param endurance La nouvelle endurance de l'athlète.
      */
-    public void setEndurance(int endurance) {
+    public void setEndurance(double endurance) {
         this.endurance = endurance;
     }
 
@@ -163,7 +181,7 @@ public class Athlete implements Util {
      * @return Une note représentant la performance de l'athlète.
      */
     @Override
-    public int participer() {
+    public double participer() {
         return this.agilite + this.endurance + this.force;
     }
 
@@ -185,7 +203,20 @@ public class Athlete implements Util {
             return false;
         }
         Athlete autreAthlete = (Athlete) o;
-        return this.force == autreAthlete.force || this.agilite == autreAthlete.agilite || this.endurance == autreAthlete.endurance ||
-                this.sexe == autreAthlete.sexe || this.nom.equals(autreAthlete.nom) || this.prenom.equals(autreAthlete.prenom) || this.nbVictoire == autreAthlete.nbVictoire;
+        return this.force == autreAthlete.force && 
+               this.agilite == autreAthlete.agilite && 
+               this.endurance == autreAthlete.endurance &&
+               this.sexe == autreAthlete.sexe && 
+               this.nom.equals(autreAthlete.nom) && 
+               this.prenom.equals(autreAthlete.prenom) && 
+               this.nbVictoire == autreAthlete.nbVictoire;
     }
+
+    @Override
+    public String toString() {
+        return "Athlete [force=" + force + ", agilite=" + agilite + ", endurance=" + endurance + ", sexe=" + sexe
+                + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
+    }
+
+    
 }
