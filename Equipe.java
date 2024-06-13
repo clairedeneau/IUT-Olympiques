@@ -163,7 +163,7 @@ public class Equipe implements Util {
      * @return Une note représentant la performance collective de l'équipe.
      */
     @Override 
-    public int participer() {
+    public double participer() {
         int res = 0;
         for (Athlete athlete : lesAthletes) {
             res += athlete.getAgilite() + athlete.getForce() + athlete.getEndurance();
