@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Equipe extends Util {
+public class Equipe implements Util {
     
     private List<Athlete> lesAthletes;
     private int nbVictoire;
@@ -157,8 +157,8 @@ public class Equipe extends Util {
      * @return Une note représentant la performance collective de l'équipe.
      */
     @Override 
-    public float participer() {
-        float res = 0;
+    public int participer() {
+        int res = 0;
         for (Athlete athlete : lesAthletes) {
             res += athlete.getAgilite() + athlete.getForce() + athlete.getEndurance();
         }

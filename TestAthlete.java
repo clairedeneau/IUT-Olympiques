@@ -14,7 +14,7 @@ public class TestAthlete {
 
     @Test
     public void testParticiper() {
-        assertEquals(18, jean.participer());
+        assertEquals(5+6+7, jean.participer());
     }
 
     @Test
