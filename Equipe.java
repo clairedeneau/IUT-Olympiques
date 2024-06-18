@@ -43,8 +43,8 @@ public class Equipe implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param victoire   Le nombre de victoires de l'athlète.
      */
-    public void ajouterAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire) {
-        this.lesAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire));
+    public void ajouterAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire, Sport sport) {
+        this.lesAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire, sport));
     }
 
     /**
@@ -76,8 +76,8 @@ public class Equipe implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param victoire   Le nombre de victoires de l'athlète.
      */
-    public void retirerAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire) {
-        this.lesAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire));
+    public void retirerAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire, Sport sport) {
+        this.lesAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire, sport));
     }
 
     /**

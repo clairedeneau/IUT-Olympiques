@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestAthlete {
-    
-    Athlete test = new Athlete(503, 6, 7, 'F', "ezaeza", "Jezaezaeean", 0);
-    Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
-    Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0);
+    Sport ddd = new Athletisme(5, "test", 5, 5, false );
+    Athlete test = new Athlete(503, 6, 7, 'F', "ezaeza", "Jezaezaeean", 0, ddd );
+    Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0, ddd);
+    Athlete matheo = new Athlete(5, 6, 7, 'H', "AABBD", "Matheo", 0, ddd);
 
     @Test
     public void testParticiper() {
@@ -96,8 +96,8 @@ public class TestAthlete {
 
     @Test
     public void testEquals() {
-        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
-        Athlete test = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0);
+        Athlete jean = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0, ddd);
+        Athlete test = new Athlete(5, 6, 7, 'H', "Pierre", "Jean", 0, ddd);
         assertEquals(true, jean.equals(test));
     }
 }

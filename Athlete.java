@@ -7,6 +7,7 @@ public class Athlete implements Util {
     private String nom;
     private String prenom;
     private int nbVictoire;
+    private Sport sport;
 
     /**
      * Constructeur de la classe Athlete.
@@ -19,7 +20,7 @@ public class Athlete implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
      */
-    public Athlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int nbVictoire) {
+    public Athlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int nbVictoire, Sport sport) {
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
@@ -27,6 +28,7 @@ public class Athlete implements Util {
         this.nom = nom;
         this.prenom = prenom;
         this.nbVictoire = nbVictoire;
+        this.sport = sport;
     }
     
     /**
@@ -37,7 +39,7 @@ public class Athlete implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
      */
-    public Athlete(char sexe, String nom, String prenom, int nbVictoire) {
+    public Athlete(char sexe, String nom, String prenom, int nbVictoire, Sport sport) {
         this.force = Math.random() * 100;
         this.agilite = Math.random() * 100;
         this.endurance = Math.random() * 100;
@@ -45,6 +47,7 @@ public class Athlete implements Util {
         this.nom = nom;
         this.prenom = prenom;
         this.nbVictoire = nbVictoire;
+        this.sport = sport;
     }
 
     /**
