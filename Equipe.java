@@ -164,7 +164,8 @@ public class Equipe implements Util {
      */
     @Override 
     public double participer() {
-        int res = 0;
+
+        double res = 0;
         for (Athlete athlete : lesAthletes) {
             res += athlete.getAgilite() + athlete.getForce() + athlete.getEndurance();
         }
