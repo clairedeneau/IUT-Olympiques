@@ -36,6 +36,16 @@ for _ in range(400):
     sexe = random.choice(sexes)
     pays_choice = random.choice(pays)
     epreuve = random.choice(epreuves)
+    if epreuve[0] == "N":
+        sport = "Natation"
+    elif epreuve[0] == "H":
+        sport = "Handball"
+    elif epreuve[0] == "V":
+        sport = "Volley-Ball"
+    elif epreuve[0] == "E":
+        sport = "Escrime"
+    elif epreuve[0] == "A":
+        sport = "Athlétisme"       
     force = random.randint(1, 20)
     endurance = random.randint(1, 20)
     agilite = random.randint(1, 20)
