@@ -110,7 +110,7 @@ public class JeuxOlympiques {
      * @param nom        Le nom du pays.
      * @param lesAthletes La liste des athlètes du pays.
      */
-    public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Athlete> lesAthletes) {
+    public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Equipe> lesAthletes) {
         Pays nouveauPays = new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes);
         if (!(this.listePays.contains(nouveauPays))) {
             this.listePays.add(nouveauPays);
