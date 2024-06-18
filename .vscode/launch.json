@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "IUTO",
+            "request": "launch",
+            "mainClass": "IUTO",
+            "vmArgs": "--module-path /usr/share/openjfx/lib/ --add-modules javafx.controls,javafx.fxml",
+            "projectName": "IUT-Olympiques_ef2c5ebb"
+        },
+        {
+            "type": "java",
+            "name": "IUTO",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/share/openjfx/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "IUTO",
+            "projectName": "test2_aaaf9886"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/share/openjfx/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "IUTO",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/share/openjfx/lib/ --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "IUTO",
+            "projectName": "test_47920d2c"
+        }
+    ]
+}
