@@ -22,6 +22,7 @@ public class Athlete implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
      * @param epreuve    Le nom de l'épreuve que l'athlète présente.
+     * @param pays       Le pays pour lequel concourt l'athlète.
      */
     public Athlete(String nom, String prenom, char sexe, Pays pays, String epreuve, int force, int endurance, int agilite, String sport) {
         this.force = force;
