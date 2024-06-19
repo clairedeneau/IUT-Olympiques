@@ -10,7 +10,7 @@ public class Epreuve {
 
 
     public Epreuve(String nom, char sexe, Sport sport){
-        /**
+    /**
      * Constructeur pour initialiser une épreuve avec son nom, le sexe des participants et le sport associé.
      *
      * @param nom Le nom de l'épreuve.

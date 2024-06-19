@@ -4,7 +4,8 @@ public class Escrime extends Sport{
     private boolean fleuret;
     private boolean epee;
     private boolean sabre;
-    private String nom;
+    private final String nom = "Escrime";
+    private final int ID = 2;
 
     /**
      * Constructeur de la classe Escrime.
@@ -16,12 +17,11 @@ public class Escrime extends Sport{
      * @param epee indique si l'épée est utilisée
      * @param sabre indique si le sabre est utilisé
      */
-    public Escrime(String nom, int tailleEquipe, int placeSpectateur, boolean fleuret, boolean epee, boolean sabre){
+    public Escrime(int tailleEquipe, int placeSpectateur, boolean fleuret, boolean epee, boolean sabre){
         super(tailleEquipe, placeSpectateur);
         this.fleuret = fleuret;
         this.epee = epee;
         this.sabre = sabre;
-        this.nom = "Escrime";
     }
 
     /**
@@ -87,13 +87,10 @@ public class Escrime extends Sport{
         return nom;
     }
 
-    /**
-     * Définit le nom de la discipline.
-     * 
-     * @param nom le nouveau nom de la discipline
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public int getID() {
+        return ID;
     }
+
+
 
 }

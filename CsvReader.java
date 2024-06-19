@@ -36,6 +36,54 @@ public class CsvReader{
         
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     private void insertDataIntoDatabase(String nom, String prenom, char sexe, String pays, String epreuve, int force, int endurance, int agilite) {
         String jdbcURL = "servinfo-maria";
         String dbUser = "dore";

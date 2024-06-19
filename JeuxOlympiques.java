@@ -6,6 +6,7 @@ public class JeuxOlympiques {
     private String dateDeDebut;
     private String dateDeFin;
     private List<Pays> listePays;
+    private List<Sport> listeSports;
 
     /**
      * Constructeur de la classe JeuxOlympiques avec les dates de début et de fin spécifiées.
@@ -18,6 +19,7 @@ public class JeuxOlympiques {
         this.dateDeDebut = debut;
         this.dateDeFin = fin;
         this.listePays = new ArrayList<>();
+        this.listeSports = new ArrayList<>();
     }
 
     /**
@@ -27,10 +29,11 @@ public class JeuxOlympiques {
      * @param fin      La date de fin des jeux olympiques (au format "YYYY-MM-DD").
      * @param lesPays  La liste des pays participants.
      */
-    public JeuxOlympiques(String debut, String fin, List<Pays> lesPays) {
+    public JeuxOlympiques(String debut, String fin, List<Pays> lesPays, List<Sport> lesSports) {
         this.dateDeDebut = debut;
         this.dateDeFin = fin;
         this.listePays = lesPays;
+        this.listeSports = lesSports;
     }
 
     /**
@@ -119,7 +122,7 @@ public class JeuxOlympiques {
      * @param nom        Le nom du pays.
      * @param lesAthletes La liste des athlètes du pays.
      */
-    public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Equipe> lesAthletes) {
+    public void ajoutePays(int nbOr, int nbArgent, int nbBronze, String nom, List<Athlete> lesAthletes) {
         Pays nouveauPays = new Pays(nbOr, nbArgent, nbBronze, nom, lesAthletes);
         if (!(this.listePays.contains(nouveauPays))) {
             this.listePays.add(nouveauPays);
@@ -147,6 +150,23 @@ public class JeuxOlympiques {
     public void retirePays(Pays pays) {
         this.listePays.remove(pays);
     }
+
+    public List<Sport> getListeSport() {
+        return listeSports;
+    }
+
+    public void setListeSports(List<Sport> listeSports) {
+        this.listeSports = listeSports;
+    }
+
+    public void ajouteSport(Sport nom) {
+        if (!(this.listeSports.contains(nom))){
+            this.listeSports.add(nom);
+        }
+    }
+
+
+
 
     @Override
     public String toString() {

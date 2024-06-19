@@ -5,7 +5,8 @@ public class VolleyBall extends Sport{
     private boolean salleTerrain;
     private int largeurTerrain;
     private int longueurTerrain;
-    private String nom;
+    private final String nom = "Volley-ball";
+    private final int ID = 5;
 
     /**
      * Constructeur de la classe VolleyBall.
@@ -18,13 +19,13 @@ public class VolleyBall extends Sport{
      * @param sableTerrain indique si le terrain est en sable
      * @param salleTerrain indique si le terrain est en salle
      */
-    public VolleyBall(String nom, int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur, boolean sableTerrain, boolean salleTerrain){
+    public VolleyBall(int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur, boolean sableTerrain, boolean salleTerrain){
         super(tailleEquipe, placeSpectateur);
         this.sableTerrain = sableTerrain;
         this.salleTerrain = salleTerrain;
         this.largeurTerrain = largeurTerrain;
         this.longueurTerrain = longueurTerrain;
-        this.nom = "Volley-Ball";
+
     }
 
     /**
@@ -108,13 +109,9 @@ public class VolleyBall extends Sport{
         return nom;
     }
 
-    /**
-     * Définit le nom de la discipline.
-     * 
-     * @param nom le nouveau nom de la discipline
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public int getID() {
+        return ID;
     }
+
     
 }

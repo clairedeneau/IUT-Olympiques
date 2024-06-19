@@ -3,7 +3,8 @@ public class Athletisme extends Sport{
     // Attributs privés
     private boolean courseHaie;
     private int distance;
-    private String nom;
+    private final String nom = "Athletisme";
+    private final int ID = 1;
     
     /**
      * Constructeur de la classe Athletisme.
@@ -14,11 +15,10 @@ public class Athletisme extends Sport{
      * @param placeSpectateur le nombre de places pour les spectateurs
      * @param courseHaie indique si la course comporte des haies
      */
-    public Athletisme(int distance, String nom, int tailleEquipe, int placeSpectateur, boolean courseHaie){
+    public Athletisme(int distance, int tailleEquipe, int placeSpectateur, boolean courseHaie){
         super(tailleEquipe, placeSpectateur);
         this.distance = distance;
         this.courseHaie = courseHaie;
-        this.nom = "Athlétisme";
     }
 
     /**
@@ -66,13 +66,10 @@ public class Athletisme extends Sport{
         return nom;
     }
 
-    /**
-     * Définit le nom de la discipline.
-     * 
-     * @param nom le nouveau nom de la discipline
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public int getID() {
+        return ID;
     }
+
+    
     
 }

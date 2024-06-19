@@ -4,6 +4,7 @@
  */
 public abstract class Sport {
 
+    protected String nom;
     protected int tailleEquipe;
     protected int placeSpectateur;
 
@@ -13,10 +14,24 @@ public abstract class Sport {
      * @param tailleEquipe    le nombre de joueurs par équipe
      * @param placeSpectateur le nombre de places disponibles pour les spectateurs
      */
+    public Sport(String nom, int tailleEquipe, int placeSpectateur) {
+        this.nom = nom;
+        this.tailleEquipe = tailleEquipe;
+        this.placeSpectateur = placeSpectateur;
+    }
+
     public Sport(int tailleEquipe, int placeSpectateur) {
         this.tailleEquipe = tailleEquipe;
         this.placeSpectateur = placeSpectateur;
     }
+
+    public Sport(String nom) {
+        this.nom = nom;
+        this.tailleEquipe = 0;
+        this.placeSpectateur = 0;
+    }
+
+
 
     /**
      * Obtient la taille de l'équipe.
