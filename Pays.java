@@ -7,7 +7,7 @@ public class Pays {
     private int nbMedailleArgent;
     private int nbMedailleBronze;
     private String nom;
-    private List<Equipe> listeEquipes;
+    private List<Athlete> listeAthletes;
 
     /**
      * Constructeur de la classe Pays avec des médailles et une liste d'équipes spécifiés.
@@ -18,12 +18,12 @@ public class Pays {
      * @param nom              Le nom du pays.
      * @param listeEquipes     La liste des équipes du pays.
      */
-    public Pays(int nbMedailleOr, int nbMedailleArgent, int nbMedailleBronze, String nom, List<Equipe> listeEquipes) {
+    public Pays(int nbMedailleOr, int nbMedailleArgent, int nbMedailleBronze, String nom, List<Athlete> athletes) {
         this.nbMedailleOr = nbMedailleOr;
         this.nbMedailleArgent = nbMedailleArgent;
         this.nbMedailleBronze = nbMedailleBronze;
         this.nom = nom;
-        this.listeEquipes = listeEquipes;
+        this.listeAthletes = athletes;
     }
 
     /**
@@ -34,19 +34,10 @@ public class Pays {
      */
     public Pays(String nom) {
         this.nom = nom;
-        this.listeEquipes = new ArrayList<>();
+        this.listeAthletes = new ArrayList<>();
         this.nbMedailleOr = 0;
         this.nbMedailleArgent = 0;
         this.nbMedailleBronze = 0;
-    }
-
-    /**
-     * Ajoute une nouvelle équipe à la liste avec le nom spécifié.
-     *
-     * @param nomEquipe Le nom de l'équipe.
-     */
-    public void ajouterEquipe(String nomEquipe) {
-        this.listeEquipes.add(new Equipe(nomEquipe));
     }
 
     /**
@@ -56,8 +47,14 @@ public class Pays {
      * @param listeAthletes La liste des athlètes de l'équipe.
      * @param nbVictoire   Le nombre de victoires de l'équipe.
      */
-    public void ajouterEquipe(String nomEquipe, List<Athlete> listeAthletes, int nbVictoire) {
-        this.listeEquipes.add(new Equipe(nomEquipe, listeAthletes, nbVictoire));
+    public void ajouterAthletes(List<Athlete> listeAthletes) {
+        this.listeAthletes.addAll(listeAthletes);
+    }
+
+    public void ajouteAthlete(Athlete atl){
+        if (!(this.listeAthletes.contains(atl))){
+            this.listeAthletes.add(atl);
+        }
     }
 
     /**
@@ -65,8 +62,8 @@ public class Pays {
      *
      * @param uneEquipe L'équipe à retirer.
      */
-    public void retirerEquipe(Equipe uneEquipe) {
-        this.listeEquipes.remove(uneEquipe);
+    public void retirerAthlete(Athlete athlete) {
+        this.listeAthletes.remove(athlete);
     }
 
     /**
@@ -76,8 +73,12 @@ public class Pays {
      * @param listeAthletes La liste des athlètes de l'équipe.
      * @param nbVictoire   Le nombre de victoires de l'équipe.
      */
-    public void retirerEquipe(String nomEquipe, List<Athlete> listeAthletes, int nbVictoire) {
-        this.listeEquipes.remove(new Equipe(nomEquipe, listeAthletes, nbVictoire));
+    public void retirerAthleteByNom(String nom, String prenom) {
+        for (Athlete atl : this.listeAthletes){
+            if (atl.getNom().equals(nom) && atl.getPrenom().equals(prenom)){
+                this.listeAthletes.remove(atl);
+            }
+        }
     }
 
     /**
@@ -157,17 +158,17 @@ public class Pays {
      *
      * @return La liste des équipes.
      */
-    public List<Equipe> getListeEquipe() {
-        return listeEquipes;
+    public List<Athlete> getListeAthlete() {
+        return listeAthletes;
     }
 
     /**
      * Modifie la liste des équipes du pays.
      *
-     * @param listeEquipes La nouvelle liste des équipes.
+     * @param listeAthletes La nouvelle liste des équipes.
      */
-    public void setListeEquipe(List<Equipe> listeEquipes) {
-        this.listeEquipes = listeEquipes;
+    public void setListeAthletes(List<Athlete> listeAthletes) {
+        this.listeAthletes = listeAthletes;
     }
 
     @Override
@@ -198,7 +199,7 @@ public class Pays {
     @Override
     public String toString() {
         return "Pays [nbMedailleOr=" + nbMedailleOr + ", nbMedailleArgent=" + nbMedailleArgent + ", nbMedailleBronze="
-                + nbMedailleBronze + ", nom=" + nom + ", listeEquipes=" + listeEquipes + "]";
+                + nbMedailleBronze + ", nom=" + nom + ", listeAthletes=" + listeAthletes + "]";
     }
     
 }

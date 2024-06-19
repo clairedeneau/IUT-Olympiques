@@ -78,6 +78,15 @@ public class JeuxOlympiques {
         return listePays;
     }
 
+    public Pays getPaysByNom(String nom){
+        for (Pays pays : this.listePays){
+            if (pays.getNom().equals(nom)){
+                return pays;
+            }
+        }
+        return null;
+    }
+
     /**
      * Modifie la liste des pays participants aux jeux olympiques.
      *
@@ -124,7 +133,10 @@ public class JeuxOlympiques {
      * @param nom Le nom du pays.
      */
     public void ajoutePays(String nom) {
-        this.listePays.add(new Pays(nom));
+        Pays pays = new Pays(nom);
+        if (!(this.listePays.contains(pays))){
+            this.listePays.add(pays);
+        }
     }
 
     /**
@@ -132,7 +144,7 @@ public class JeuxOlympiques {
      *
      * @param pays Le pays à retirer.
      */
-    public void retierPays(Pays pays) {
+    public void retirePays(Pays pays) {
         this.listePays.remove(pays);
     }
 

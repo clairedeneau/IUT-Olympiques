@@ -25,9 +25,10 @@ public class CsvReader{
                 String force = data[5];
                 String endurance = data[6];
                 String agilite = data[7];
-                Sport sport = new Sport(data[8]);
+                String sport = data[8];
                 this.jo.ajoutePays(pays);
-                Athlete atl = new Athlete(nom, prenom, sexe, pays, epreuve, Integer.parseInt(force), Integer.parseInt(endurance), Integer.parseInt(agilite), sport);
+                Athlete atl = new Athlete(nom, prenom, sexe, this.jo.getPaysByNom(pays), epreuve, Integer.parseInt(force), Integer.parseInt(endurance), Integer.parseInt(agilite), sport);
+                this.jo.getPaysByNom(pays).ajouteAthlete(atl);
             }
         }catch(FileNotFoundException ex){
             System.out.println("le fichier n’existe pas");

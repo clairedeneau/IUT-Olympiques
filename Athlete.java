@@ -44,7 +44,7 @@ public class Athlete implements Util {
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
      */
-    public Athlete(char sexe, String nom, String prenom, int nbVictoire, Sport sport) {
+    public Athlete(char sexe, String nom, String prenom, int nbVictoire, String sport) {
         this.force = Math.random() * 100;
         this.agilite = Math.random() * 100;
         this.endurance = Math.random() * 100;
@@ -226,14 +226,6 @@ public class Athlete implements Util {
                 + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
     }
 
-    public Sport getSport() {
-        return sport;
-    }
-
-    public void setSport(Sport sport) {
-        this.sport = sport;
-    }
-
     public String getEpreuve() {
         return epreuve;
     }
@@ -252,6 +244,10 @@ public class Athlete implements Util {
 
     public void setPays(Pays pays) {
         this.pays = pays;
+    }
+
+    public String getSport() {
+        return sport;
     }
 
     
