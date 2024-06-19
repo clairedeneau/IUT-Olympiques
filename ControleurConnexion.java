@@ -32,7 +32,7 @@ public class ControleurConnexion {
 
     @FXML
     private void handleConnexion(ActionEvent event) throws IOException {
-            vue.modeOrganisateurAccueil();
+            vue.modeAdminPrincipale();
     }
 
     @FXML

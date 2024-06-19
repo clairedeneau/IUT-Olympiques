@@ -33,6 +33,14 @@ public class IUTO extends Application {
 
     private ControleurOrganisteurEpreuve controleurOrganisteurEpreuve;
 
+    private ControleurAdminPrincipale controleurAdminPrincipale;
+
+    private ControleurAdminAthlete controleurAdminAthlete;
+
+    private ControleurAdminPays controleurAdminPays;
+
+    private ControlleurAdminCompte controlleurAdminCompte;
+
     @Override
     public void init() throws IOException, ClassNotFoundException {
         try {
@@ -49,6 +57,10 @@ public class IUTO extends Application {
         controleurJournaliste = new ControleurJournaliste(this);
         controleurOrganisateurAccueil = new ControleurOrganisateurAccueil(this);
         controleurOrganisteurEpreuve = new ControleurOrganisteurEpreuve(this);
+        controleurAdminPrincipale = new ControleurAdminPrincipale(this);
+        controleurAdminAthlete = new ControleurAdminAthlete(this);
+        controleurAdminPays = new ControleurAdminPays(this);
+        controlleurAdminCompte = new ControlleurAdminCompte(this);
     }
         
     public BorderPane loadPageAccueil() throws IOException {
@@ -91,24 +103,36 @@ public class IUTO extends Application {
         return root;
     }
     
-    public BorderPane loadPageAdmin() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("page_admin_principale.fxml"));
-        return loader.load();
-    }
-    
     public BorderPane loadPageAdminAthlete() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page_admin_modifAthlete.fxml"));
-        return loader.load();
+        loader.setControllerFactory(c -> new ControleurAdminAthlete(this));
+        loader.setController(controleurAdminAthlete);
+        BorderPane root = loader.load();
+        return root;
     }
     
+    public BorderPane loadPageAdminPrincipale() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("page_admin_principale.fxml"));
+        loader.setControllerFactory(c -> new ControleurConnexion(this));
+        loader.setController(controleurAdminPrincipale);
+        BorderPane root = loader.load();
+        return root;
+    }
+
     public BorderPane loadPageAdminCompte() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page_admin_nvCompte.fxml"));
-        return loader.load();
+        loader.setControllerFactory(c -> new ControlleurAdminCompte(this));
+        loader.setController(controlleurAdminCompte);
+        BorderPane root = loader.load();
+        return root;
     }
     
     public BorderPane loadPageAdminPays() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page_admin_modifPays.fxml"));
-        return loader.load();
+        loader.setControllerFactory(c -> new ControleurAdminPays(this));
+        loader.setController(controleurAdminPays);
+        BorderPane root = loader.load();
+        return root;
     }
     
     public void modeConnexion() throws IOException {
@@ -131,8 +155,8 @@ public class IUTO extends Application {
         this.panelCentral.setCenter(loadPageJournaliste());
     }
     
-    public void modeAdmin() throws IOException {
-        this.panelCentral.setCenter(loadPageAdmin());
+    public void modeAdminPrincipale() throws IOException {
+        this.panelCentral.setCenter(loadPageAdminPrincipale());
     }
     
     public void modeAdminPays() throws IOException {
@@ -150,7 +174,7 @@ public class IUTO extends Application {
     
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-
+        connexionMySQL.connecter("servinfo-maria", "DBdore", "dore", "dore");
         modeAccueil();
         stage.setTitle("Jeux Olympiques 2024");
         Scene scene = new Scene(this.panelCentral, 600, 600);
