@@ -26,10 +26,14 @@ public class CsvReader{
                 String endurance = data[6];
                 String agilite = data[7];
                 String sport = data[8];
+                this.jo.ajouteSport(sport);
                 this.jo.ajoutePays(pays);
                 Athlete atl = new Athlete(nom, prenom, sexe, this.jo.getPaysByNom(pays), epreuve, Integer.parseInt(force), Integer.parseInt(endurance), Integer.parseInt(agilite), sport);
                 this.jo.getPaysByNom(pays).ajouteAthlete(atl);
+                
+       
             }
+            scan.close();
         }catch(FileNotFoundException ex){
             System.out.println("le fichier n’existe pas");
         }
@@ -83,7 +87,7 @@ public class CsvReader{
 
 
 
-    
+
     private void insertDataIntoDatabase(String nom, String prenom, char sexe, String pays, String epreuve, int force, int endurance, int agilite) {
         String jdbcURL = "servinfo-maria";
         String dbUser = "dore";

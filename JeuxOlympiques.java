@@ -159,9 +159,26 @@ public class JeuxOlympiques {
         this.listeSports = listeSports;
     }
 
-    public void ajouteSport(Sport nom) {
-        if (!(this.listeSports.contains(nom))){
-            this.listeSports.add(nom);
+    public void ajouteSport(String nom) {
+        Sport nouveauSport = null;
+        if (nom.equals("Natation")) {
+            nouveauSport = new Natation(0, 0, 0, 0);
+        }
+        if (nom.equals("Handball")) {
+            nouveauSport = new Handball(0, 0, 0, 0);
+        }
+        if (nom.equals("Volley-Ball")) {
+            nouveauSport = new VolleyBall(0, 0, 0, 0, false, false);    
+        }
+        if (nom.equals("Escrime")) {
+            nouveauSport = new Escrime(0, 0, false, false, false);
+        }
+        if (nom.equals("Athlétisme")) {
+            nouveauSport = new Athletisme(0, 0, 0, false);
+        if((!(nouveauSport == null)) && (!(listeSports.contains(nouveauSport)))){
+            listeSports.add(nouveauSport); 
+        }
+        
         }
     }
 
