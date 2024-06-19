@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="375.0" prefWidth="104.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageProfil" fitHeight="55.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="25.0" right="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../Images/poissonsus.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lNomOrga" prefHeight="16.0" prefWidth="143.0" text="&lt;nom orga&gt;">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Line endX="-1.7071075439453125" endY="-5.793571472167969E-5" startX="-100.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <VBox.margin>
+                  <Insets left="5.0" top="10.0" />
+               </VBox.margin>
+            </Line>
+            <Button fx:id="bDeconnexion" mnemonicParsing="false" onAction="#handleAccueil" prefHeight="23.0" prefWidth="27.0">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="bPageAvant" mnemonicParsing="false" onAction="#handleRetour" text="Page d'avant">
+               <VBox.margin>
+                  <Insets left="3.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Label fx:id="titreOrga" prefHeight="40.0" prefWidth="215.0" text="Gérer les épreuves" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="355.0" prefWidth="255.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="196.0" text="Sélectionnez une épreuve :" />
+                  <ScrollPane fx:id="spEpreuves" prefHeight="271.0" prefWidth="255.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="355.0" prefWidth="240.0">
+               <children>
+                  <Button fx:id="suppEpreuve" mnemonicParsing="false" text="Supprimer l'épreuve">
+                     <VBox.margin>
+                        <Insets top="120.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="lanceEpreuve" defaultButton="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="151.0" text="Lancer l'épreuve">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>

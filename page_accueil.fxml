@@ -59,17 +59,17 @@
                   </LinearGradient>
                </stroke>
             </Line>
-            <Button fx:id="boutonJournaliste" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="306.0" style="-fx-background-color: coral;" text="Journaliste                        ➤" textAlignment="RIGHT">
+            <Button fx:id="boutonJournaliste" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleCliquer" prefHeight="40.0" prefWidth="306.0" style="-fx-background-color: coral;" text="Journaliste                        ➤" textAlignment="RIGHT">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="boutonAdmin" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="306.0" style="-fx-background-color: seagreen;" text="Administrateur                    ➤">
+            <Button fx:id="boutonAdmin" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleCliquer" prefHeight="40.0" prefWidth="306.0" style="-fx-background-color: seagreen;" text="Administrateur                    ➤">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="boutonOrga" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="305.0" style="-fx-background-color: slateblue;" text="Organisateur                      ➤" textAlignment="RIGHT">
+            <Button fx:id="boutonOrga" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleCliquer" prefHeight="40.0" prefWidth="305.0" style="-fx-background-color: slateblue;" text="Organisateur                      ➤" textAlignment="RIGHT">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
