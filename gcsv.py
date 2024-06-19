@@ -49,13 +49,13 @@ for _ in range(400):
     force = random.randint(1, 20)
     endurance = random.randint(1, 20)
     agilite = random.randint(1, 20)
-    records.append([nom, prenom, sexe, pays_choice, epreuve, force,endurance, agilite])
+    records.append([nom, prenom, sexe, pays_choice, epreuve, force,endurance, agilite, sport])
 
 # Écriture des données dans un fichier CSV
 with open('donnees.csv', 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     # Écriture de l'en-tête
-    writer.writerow(["Nom", "Prénom", "Sexe", "Pays", "Épreuve","Force","Endurance","agilite"])
+    writer.writerow(["Nom", "Prénom", "Sexe", "Pays", "Épreuve","Force","Endurance","agilite","Sport"])
     # Écriture des enregistrements
     writer.writerows(records)
 

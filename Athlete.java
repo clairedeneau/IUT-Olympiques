@@ -7,7 +7,9 @@ public class Athlete implements Util {
     private String nom;
     private String prenom;
     private int nbVictoire;
-    private Sport sport;
+    private String sport;
+    private String epreuve;
+    private Pays pays;
 
     /**
      * Constructeur de la classe Athlete.
@@ -19,16 +21,19 @@ public class Athlete implements Util {
      * @param nom        Le nom de l'athlète.
      * @param prenom     Le prénom de l'athlète.
      * @param nbVictoire Le nombre de victoires de l'athlète.
+     * @param epreuve    Le nom de l'épreuve que l'athlète présente.
      */
-    public Athlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int nbVictoire, Sport sport) {
+    public Athlete(String nom, String prenom, char sexe, Pays pays, String epreuve, int force, int endurance, int agilite, String sport) {
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
         this.sexe = sexe;
         this.nom = nom;
         this.prenom = prenom;
-        this.nbVictoire = nbVictoire;
+        this.nbVictoire = 0;
         this.sport = sport;
+        this.epreuve = epreuve;
+        this.pays = pays;
     }
     
     /**
@@ -219,6 +224,34 @@ public class Athlete implements Util {
     public String toString() {
         return "Athlete [force=" + force + ", agilite=" + agilite + ", endurance=" + endurance + ", sexe=" + sexe
                 + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
+    }
+
+    public Sport getSport() {
+        return sport;
+    }
+
+    public void setSport(Sport sport) {
+        this.sport = sport;
+    }
+
+    public String getEpreuve() {
+        return epreuve;
+    }
+
+    public void setEpreuve(String epreuve) {
+        this.epreuve = epreuve;
+    }
+
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
+
+    public Pays getPays() {
+        return pays;
+    }
+
+    public void setPays(Pays pays) {
+        this.pays = pays;
     }
 
     
