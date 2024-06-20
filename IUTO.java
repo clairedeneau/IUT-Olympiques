@@ -189,7 +189,7 @@ public class IUTO extends Application {
     
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        connexionMySQL.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        connexionMySQL.connecter("servinfo-maria", "DBdeneau", "deneau", "deneau");
         modeAccueil();
         stage.setTitle("Jeux Olympiques 2024");
         Scene scene = new Scene(this.panelCentral, 600, 600);

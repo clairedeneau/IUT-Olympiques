@@ -21,7 +21,7 @@ public class Jdbc {
 
     public String tableauMedailles() throws SQLException{
 	    this.st=connexion.createStatement();
-		String requete = "Select * from PAYS";
+		String requete = "Select * from PAYSJO";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Pays, Or, Argent, Bronze \n";
 
@@ -37,7 +37,7 @@ public class Jdbc {
 	}
     public String classementParSport(String sport) throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select Nom, Prenom, Nom_Pays, Nb_Victoires from ATHLETE where sport ='" + sport + "' order by Nb_Victoires desc";
+		String requete = "Select Nom, Prenom, Nom_Pays, Nb_Victoires from ATHLETES where sport ='" + sport + "' order by Nb_Victoires desc";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Prenom, Pays, Nombre de victoires \n";
 
@@ -54,7 +54,7 @@ public class Jdbc {
 
     public String recherchePays(String pays) throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select * from PAYS where Nom_Pays = '"+ pays+"'";
+		String requete = "Select * from PAYSJO where Nom_Pays = '"+ pays+"'";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Or, Argent, Bronze \n";
         String nom = r.getString(0);
@@ -68,7 +68,7 @@ public class Jdbc {
     
     public String rechercheAthlete(String nomA, String prenomA) throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select * from ATHLETE natural join PARTICIPE natural join EPREUVE where Nom = '"+nomA+"' and Prenom = '"+prenomA+"'";
+		String requete = "Select * from ATHLETES natural join PARTICIPER natural join EPREUVES where Nom = '"+nomA+"' and Prenom = '"+prenomA+"'";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Prenom, Sexe, Force, Agilité, Endurance, Nombre de victoires, Pays\n";
         String nom = r.getString(1);
@@ -94,7 +94,7 @@ public class Jdbc {
 
     public List<String> listeEpreuves()throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select * from EPREUVE";
+		String requete = "Select * from EPREUVES";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Id, Nom, Sexe, Id du sport \n";
 
@@ -116,7 +116,7 @@ public class Jdbc {
 
     public List<String> listeAthletesSelonSport(int idSport)throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select Nom, Prenom from ATHLETE where Id_Sport ="+idSport;
+		String requete = "Select Nom, Prenom from ATHLETES where Id_Sport ="+idSport;
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Prenom \n";
 
@@ -136,35 +136,35 @@ public class Jdbc {
 
     public void modifPays(String nom_init, String nom, int nbOr, int nbArg, int nbBrz)throws SQLException{
         st = connexion.createStatement();
-     	String requete = "UPDATE PAYS SET Nom_Pays = '"+nom+"', Nb_medailles_or = '"+nbOr+"', Nb_medailles_argent = '"+nbArg+"', Nb_medailles_bronze = '"+nbBrz+"',WHERE Nom_Pays = '"+nom_init+"'";
+     	String requete = "UPDATE PAYSJO SET Nom_Pays = '"+nom+"', Nb_medailles_or = '"+nbOr+"', Nb_medailles_argent = '"+nbArg+"', Nb_medailles_bronze = '"+nbBrz+"',WHERE Nom_Pays = '"+nom_init+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
     public void modifAthlete(int id, String nom, String prenom, String sexe, int force, int agilite, int endurance, int victoires, String pays)throws SQLException{
         st = connexion.createStatement();
-     	String requete = "UPDATE ATHLETE SET Nom = '"+nom+"',Prenom = '"+prenom+"',Sexe = '"+sexe+"',Force = '"+force+"',Agilite = '"+agilite+"',Endurance = '"+endurance+"',Nb_Victoires_Athlète = '"+victoires+"',Nom_Pays = '"+pays+"' WHERE Id_Athlète = '"+id+"'";
+     	String requete = "UPDATE ATHLETES SET Nom = '"+nom+"',Prenom = '"+prenom+"',Sexe = '"+sexe+"',Force = '"+force+"',Agilite = '"+agilite+"',Endurance = '"+endurance+"',Nb_Victoires_Athlète = '"+victoires+"',Nom_Pays = '"+pays+"' WHERE Id_Athlète = '"+id+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
     public void supprimeEpreuve(int id) throws SQLException {
         st = connexion.createStatement();
-     	String requete = "DELETE FROM EPREUVE WHERE Id_Epreuve = "+id;
+     	String requete = "DELETE FROM EPREUVES WHERE Id_Epreuve = "+id;
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
     public void ajouteParticipation(int idEquipe, int idEpreuve, int position, double score) throws SQLException {
         st = connexion.createStatement();
-     	String requete = "INSERT INTO PARTICIPE VALUES('"+idEquipe+"','"+idEpreuve+"','"+position+"','"+score+"')";
+     	String requete = "INSERT INTO PARTICIPER VALUES('"+idEquipe+"','"+idEpreuve+"','"+position+"','"+score+"')";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
     public void creerEpreuve(int idEpreuve, int idSport, String  nom, String sexe) throws SQLException {
         st = connexion.createStatement();
-     	String requete = "INSERT INTO EPREUVE VALUES('"+idEpreuve+"','"+nom+"','"+sexe+"','"+idSport+"')";
+     	String requete = "INSERT INTO EPREUVES VALUES('"+idEpreuve+"','"+nom+"','"+sexe+"','"+idSport+"')";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
