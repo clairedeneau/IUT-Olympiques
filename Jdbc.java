@@ -13,7 +13,7 @@ public class Jdbc {
 
     public String getRoleUser(String nomUser, String mdpUser) throws SQLException{
         this.st = this.connexion.createStatement();
-        String requete = "Select role from USER where nom = '"+nomUser+"' and mdp = '"+mdpUser+"'";
+        String requete = "Select metier from USER where nom = '"+nomUser+"' and mdp = '"+mdpUser+"'";
         ResultSet r=st.executeQuery(requete);
         String res = r.getString(0);
         return res;
