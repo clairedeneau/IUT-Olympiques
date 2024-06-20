@@ -2,12 +2,15 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.sql.*;
 
 public class CsvReader{
     
     private String txt;
     private JeuxOlympiques jo;
     private List<String> listePays;
+    ConnexionMySQL laConnexion;
+	Statement st;
     
     public CsvReader(String filePath, JeuxOlympiques jeux){
         listePays = new ArrayList<>();
@@ -39,4 +42,18 @@ public class CsvReader{
         }
         
     }
+
+    void ajouterAthlete(Athlete e) throws  SQLException{
+		st=laConnexion.createStatement();
+        String requete = "insert into ATHLETE values("+e.getNom()+",'"+e.getPrenom()+"','"+e.getSexe()+"',"+e.getPays()+")";
+        System.out.println(requete);
+        st.executeUpdate(requete);
+	}
+
+
+
+
+
+
+
 }
