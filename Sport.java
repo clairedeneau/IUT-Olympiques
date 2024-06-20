@@ -7,6 +7,7 @@ public abstract class Sport {
     protected String nom;
     protected int tailleEquipe;
     protected int placeSpectateur;
+    protected String nom;
 
     /**
      * Constructeur de la classe Sport.
@@ -20,10 +21,6 @@ public abstract class Sport {
         this.placeSpectateur = placeSpectateur;
     }
 
-    public Sport(int tailleEquipe, int placeSpectateur) {
-        this.tailleEquipe = tailleEquipe;
-        this.placeSpectateur = placeSpectateur;
-    }
 
     public Sport(String nom) {
         this.nom = nom;
@@ -68,4 +65,11 @@ public abstract class Sport {
     public void setPlaceSpectateur(int placeSpectateur) {
         this.placeSpectateur = placeSpectateur;
     }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
+
+    
 }

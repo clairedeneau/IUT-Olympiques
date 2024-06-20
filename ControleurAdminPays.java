@@ -64,7 +64,7 @@ public class ControleurAdminPays {
         vue.modeAdminPrincipale();
     }
 
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     @FXML  
     private void handleAnnuler(ActionEvent event) throws IOException {
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0);

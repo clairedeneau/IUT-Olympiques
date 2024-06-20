@@ -227,6 +227,16 @@ public class Athlete implements Util {
                 + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
     }
 
+
+    public Sport getSport() {
+        return sport;
+    }
+
+    public void setSport(Sport sport) {
+        this.sport = sport;
+    }
+
+
     public String getEpreuve() {
         return epreuve;
     }
@@ -250,6 +260,7 @@ public class Athlete implements Util {
     public String getSport() {
         return sport;
     }
+
 
     
 }

@@ -72,7 +72,7 @@ public class ControlleurAdminCompte {
             
     }
 
-        @FXML  
+    @FXML  
     private void handleAnnuler(ActionEvent event) throws IOException {
         tfUserName.setText("");
         tfMdp1.setText("");

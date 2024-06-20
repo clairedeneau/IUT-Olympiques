@@ -44,7 +44,7 @@ public class Epreuve {
      * @param classmt Le classement de l'équipe.
      */
         if (!(this.classement.contient(equipe))){
-            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classement, equipe);
+            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, equipe);
             this.classement.add(scr);
         }
     }
@@ -58,7 +58,7 @@ public class Epreuve {
      * @param pointsOuTemps Les points ou le temps de l'équipe.
      */
         if (!(this.classement.contient(equipe))){
-            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classement, pointsOuTemps, equipe);
+            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, pointsOuTemps, equipe);
             this.classement.add(scr);
         }
     }
@@ -75,37 +75,4 @@ public class Epreuve {
             }
         }
     }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public char getSexe() {
-        return sexe;
-    }
-
-    public void setSexe(char sexe) {
-        this.sexe = sexe;
-    }
-
-    public List<Score<Integer, Double, Equipe>> getClassement() {
-        return classement;
-    }
-
-    public void setClassement(List<Score<Integer, Double, Equipe>> classement) {
-        this.classement = classement;
-    }
-
-    public Sport getSport() {
-        return sport;
-    }
-
-    public void setSport(Sport sport) {
-        this.sport = sport;
-    }
-    
 }

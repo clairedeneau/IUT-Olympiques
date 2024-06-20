@@ -15,8 +15,8 @@ public class Handball extends Sport{
      * @param longueurTerrain la longueur du terrain de handball
      * @param placeSpectateur le nombre de places pour les spectateurs
      */
-    public Handball(int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur){
-        super(tailleEquipe, placeSpectateur);
+    public Handball(String nom, int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur){
+        super(nom, tailleEquipe, placeSpectateur);
         this.largeurTerrain = largeurTerrain;
         this.longueurTerrain = longueurTerrain;
     }

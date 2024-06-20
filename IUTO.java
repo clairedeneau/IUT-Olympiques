@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -40,6 +41,8 @@ public class IUTO extends Application {
     private ControleurAdminPays controleurAdminPays;
 
     private ControlleurAdminCompte controlleurAdminCompte;
+
+    private ComboBox<Sport> cbSport;
 
     @Override
     public void init() throws IOException, ClassNotFoundException {
@@ -79,13 +82,25 @@ public class IUTO extends Application {
         return root;
     }
     
+
     public BorderPane loadPageOrganisateurAccueil() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page_orgaAccueil.fxml"));
         loader.setControllerFactory(c -> new ControleurOrganisateurAccueil(this));
         loader.setController(controleurOrganisateurAccueil);
         BorderPane root = loader.load();
+        this.cbSport = (ComboBox<Sport>) root.lookup("#cbSport");
+        Sport centM = new Athletisme(100, "100 metres", 1, 1000, false);
+        Sport centDixM = new Athletisme(110, "110 metres haies", 1, 1000, true);
+        Sport volley = new VolleyBall("Volley", 10, 10, 6, 100, true, false);
+        Sport natation = new Natation(100, "100 metres crawl", 1, 100, 3);
+        Sport hand = new Handball("Handball", 5, 40, 20, 1000);
+        Sport escrime = new Escrime("Escrime", 1, 1000, false, false, true);
+        this.cbSport.getItems().addAll(centM,centDixM,volley, natation, hand, escrime);
         return root;
+        
     }
+
+
 
     public BorderPane loadPageOrganisateurEpreuve() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page_orgaEpreuve.fxml"));

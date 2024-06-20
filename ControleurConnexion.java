@@ -32,12 +32,12 @@ public class ControleurConnexion {
 
     @FXML
     private void handleConnexion(ActionEvent event) throws IOException {
-            vue.modeAdminPrincipale();
+        vue.modeOrganisateurAccueil();
     }
 
     @FXML
     private void handleAccueil(ActionEvent event) throws IOException {
-            vue.modeAccueil();
+        vue.modeAccueil();
     }
 
     public TextField getTfUser() {
