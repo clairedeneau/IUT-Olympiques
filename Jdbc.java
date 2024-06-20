@@ -13,7 +13,7 @@ public class Jdbc {
 
     public String getRoleUser(String nomUser, String mdpUser) throws SQLException{
         this.st = this.connexion.createStatement();
-        String requete = "Select metier from USER where nom = '"+nomUser+"' and mdp = '"+mdpUser+"'";
+        String requete = "Select metier from USER where nom = '"+nomUser+"' and MDP = '"+mdpUser+"'";
         ResultSet r=st.executeQuery(requete);
         String res = r.getString(0);
         return res;
@@ -35,9 +35,9 @@ public class Jdbc {
 		r.close();
 		return resultat;
 	}
-    public String classementParSport(String sport) throws SQLException{
+    public String classementParSport(int idsport) throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select Nom, Prenom, Nom_Pays, Nb_Victoires from ATHLETES where sport ='" + sport + "' order by Nb_Victoires desc";
+		String requete = "Select Nom, Prenom, Nom_Pays, Nb_Victoires_Athlètes from ATHLETES where Id_Sport =" + idsport + " order by Nb_Victoires_Athlète desc";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Prenom, Pays, Nombre de victoires \n";
 
@@ -68,7 +68,7 @@ public class Jdbc {
     
     public String rechercheAthlete(String nomA, String prenomA) throws SQLException{
         this.st=connexion.createStatement();
-		String requete = "Select * from ATHLETES natural join PARTICIPER natural join EPREUVES where Nom = '"+nomA+"' and Prenom = '"+prenomA+"'";
+		String requete = "Select * from ATHLETES natural join APPARTENIR natural join EQUIPE natural join PARTICIPER natural join EPREUVES where Nom = '"+nomA+"' and Prenom = '"+prenomA+"'";
 		ResultSet r=st.executeQuery(requete);
 		String resultat="Nom, Prenom, Sexe, Force, Agilité, Endurance, Nombre de victoires, Pays\n";
         String nom = r.getString(1);
