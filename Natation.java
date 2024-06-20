@@ -2,8 +2,9 @@ public class Natation extends Sport{
 
     // Attributs privés
     private int profondeurPiscine;
-    private String nom;
+    private final String nom = "Natation";
     private int distance;
+    private final int ID = 4;
     
     /**
      * Constructeur de la classe Natation.
@@ -14,10 +15,10 @@ public class Natation extends Sport{
      * @param placeSpectateur le nombre de places pour les spectateurs
      * @param profondeurPiscine la profondeur de la piscine utilisée
      */
+
     public Natation(int distance, String nom, int tailleEquipe, int placeSpectateur, int profondeurPiscine){
         super(nom, tailleEquipe, placeSpectateur);
         this.distance = distance;
-        this.nom = "Natation";
         this.profondeurPiscine = profondeurPiscine;
     }
 
@@ -49,15 +50,6 @@ public class Natation extends Sport{
     }
 
     /**
-     * Définit le nom de la discipline.
-     * 
-     * @param nom le nouveau nom de la discipline
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    /**
      * Obtient la distance de la course.
      * 
      * @return la distance de la course
@@ -74,5 +66,11 @@ public class Natation extends Sport{
     public void setDistance(int distance) {
         this.distance = distance;
     }
+
+    public int getID() {
+        return ID;
+    }
+
+    
 
 }

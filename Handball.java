@@ -3,7 +3,8 @@ public class Handball extends Sport{
     // Attributs privés
     private int largeurTerrain;
     private int longueurTerrain;
-    private String nom;
+    private final String nom = "Handball";
+    private final int ID = 3;
 
     /**
      * Constructeur de la classe Handball.
@@ -18,7 +19,6 @@ public class Handball extends Sport{
         super(nom, tailleEquipe, placeSpectateur);
         this.largeurTerrain = largeurTerrain;
         this.longueurTerrain = longueurTerrain;
-        this.nom = "Handball";
     }
 
     /**
@@ -66,13 +66,9 @@ public class Handball extends Sport{
         return nom;
     }
 
-    /**
-     * Définit le nom de la discipline.
-     * 
-     * @param nom le nouveau nom de la discipline
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+    public int getID() {
+        return ID;
     }
+
     
 }

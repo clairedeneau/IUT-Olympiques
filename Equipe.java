@@ -33,21 +33,6 @@ public class Equipe implements Util {
     }
 
     /**
-     * Ajoute un nouvel athlète à l'équipe avec les attributs spécifiés.
-     *
-     * @param force      La force de l'athlète.
-     * @param agilite    L'agilité de l'athlète.
-     * @param endurance  L'endurance de l'athlète.
-     * @param sexe       Le sexe de l'athlète.
-     * @param nom        Le nom de l'athlète.
-     * @param prenom     Le prénom de l'athlète.
-     * @param victoire   Le nombre de victoires de l'athlète.
-     */
-    public void ajouterAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire, Sport sport) {
-        this.lesAthletes.add(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire, sport));
-    }
-
-    /**
      * Ajoute un athlète existant à l'équipe.
      *
      * @param athlete L'athlète à ajouter.
@@ -67,17 +52,18 @@ public class Equipe implements Util {
 
     /**
      * Retire un athlète de l'équipe en spécifiant ses attributs.
-     *
-     * @param force      La force de l'athlète.
-     * @param agilite    L'agilité de l'athlète.
-     * @param endurance  L'endurance de l'athlète.
-     * @param sexe       Le sexe de l'athlète.
      * @param nom        Le nom de l'athlète.
      * @param prenom     Le prénom de l'athlète.
-     * @param victoire   Le nombre de victoires de l'athlète.
      */
-    public void retirerAthlete(double force, double agilite, double endurance, char sexe, String nom, String prenom, int victoire, Sport sport) {
-        this.lesAthletes.remove(new Athlete(force, agilite, endurance, sexe, nom, prenom, victoire, sport));
+    public void retirerAthlete(String nomAtl, String prenomAtl) {
+        for (Athlete atl : this.lesAthletes){
+            if (atl.getNom().equals(nomAtl) && atl.getPrenom().equals(prenomAtl)){
+                this.lesAthletes.remove(atl);
+            }
+        }
+        
+        
+        
     }
 
     /**
@@ -90,7 +76,7 @@ public class Equipe implements Util {
     }
 
     /**
-     * Modifie la liste des athlètes de l'équipe.
+     * Remplace la liste des athlètes de l'équipe.
      *
      * @param lesAthletes La nouvelle liste des athlètes de l'équipe.
      */

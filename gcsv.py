@@ -36,16 +36,26 @@ for _ in range(400):
     sexe = random.choice(sexes)
     pays_choice = random.choice(pays)
     epreuve = random.choice(epreuves)
+    if epreuve[0] == "N":
+        sport = "Natation"
+    elif epreuve[0] == "H":
+        sport = "Handball"
+    elif epreuve[0] == "V":
+        sport = "Volley-Ball"
+    elif epreuve[0] == "E":
+        sport = "Escrime"
+    elif epreuve[0] == "A":
+        sport = "Athlétisme"       
     force = random.randint(1, 20)
     endurance = random.randint(1, 20)
     agilite = random.randint(1, 20)
-    records.append([nom, prenom, sexe, pays_choice, epreuve, force,endurance, agilite])
+    records.append([nom, prenom, sexe, pays_choice, epreuve, force,endurance, agilite, sport])
 
 # Écriture des données dans un fichier CSV
 with open('donnees.csv', 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     # Écriture de l'en-tête
-    writer.writerow(["Nom", "Prénom", "Sexe", "Pays", "Épreuve","Force","Endurance","agilite"])
+    writer.writerow(["Nom", "Prénom", "Sexe", "Pays", "Épreuve","Force","Endurance","agilite","Sport"])
     # Écriture des enregistrements
     writer.writerows(records)
 
