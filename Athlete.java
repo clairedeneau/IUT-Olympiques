@@ -184,6 +184,10 @@ public class Athlete implements Util {
         this.nbVictoire = nbVictoire;
     }
 
+    public void ajouteVictoire(){
+        this.nbVictoire += 1;
+    }
+
     /**
      * Participe à une compétition et retourne une note basée sur les attributs de l'athlète.
      *

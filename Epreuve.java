@@ -108,4 +108,24 @@ public class Epreuve {
         this.sport = sport;
     }
     
+    public void lancer(){
+        int place = 1;
+        int score = 100;
+        for (Score<Integer, Double, Equipe> result : this.classement){
+            result.setClassement(place);
+            result.setScore(score);
+            place++;
+            score -= 5;
+            if (place == 1){
+                result.getParticipant().ajouteVictoire();
+                result.getParticipant().getLesAthletes().get(0).getPays().ajouteOr();
+            }
+            if (place == 2){
+                result.getParticipant().getLesAthletes().get(0).getPays().ajouteArgent();
+            }
+            if (place == 3){
+                result.getParticipant().getLesAthletes().get(0).getPays().ajouteBronze();
+            }
+        }
+    }
 }

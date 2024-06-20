@@ -102,6 +102,16 @@ public class Equipe implements Util {
     @Override
     public void setNbVictoire(int nbVictoire) {
         this.nbVictoire = nbVictoire;
+        for (Athlete atl : this.lesAthletes){
+            atl.setNbVictoire(nbVictoire);
+        }
+    }
+
+    public void ajouteVictoire() {
+        this.nbVictoire += 1;
+        for (Athlete atl : this.lesAthletes){
+            atl.ajouteVictoire();
+        }
     }
 
     /**

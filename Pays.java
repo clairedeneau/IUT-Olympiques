@@ -171,6 +171,18 @@ public class Pays {
         this.listeAthletes = listeAthletes;
     }
 
+    public void ajouteOr(){
+        this.nbMedailleOr += 1;
+    }
+
+    public void ajouteArgent(){
+        this.nbMedailleArgent += 1;
+    }
+
+    public void ajouteBronze(){
+        this.nbMedailleBronze += 1;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

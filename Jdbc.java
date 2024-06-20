@@ -169,4 +169,24 @@ public class Jdbc {
 		st.executeUpdate(requete);
     }
 
+    public void modifMedailles(Pays pays){
+        st = connexion.createStatement();
+     	String requete = "UPDATE PAYSJO SET Nb_médailles_or = "+pays.getNbMedailleOr()+", Nb_Médailles_argent = "+pays.getNbMedailleArgent()+", Nb_Médailles_bronze = "+pays.getNbMedailleBronze()" WHERE Nom_pays = '"+pays.getNom()+"'";
+		System.out.println(requete);
+		st.executeUpdate(requete);
+    }
+
+    public void modifVictoires(Athlete atl){
+        st = connexion.createStatement();
+     	String requete = "UPDATE ATHLETES SET Nb_Victoires_Athlète = "+atl.getNbVictoire()+" WHERE Nom = '"+atl.getNom()+"' AND Prenom = '"+atl.getPrenom()+"'";
+		System.out.println(requete);
+		st.executeUpdate(requete);
+    }
+
+    public void modifVictoires(Equipe eq){
+        st = connexion.createStatement();
+     	String requete = "UPDATE EQUIPE SET Nb_Victoires = "+eq.getNbVictoire()+" WHERE Nom_Equipe = '"+eq.getNom()+"'";
+		System.out.println(requete);
+		st.executeUpdate(requete);
+    }    
 }
