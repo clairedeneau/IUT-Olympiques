@@ -43,7 +43,7 @@ public class Epreuve {
      * @param equipe L'équipe à ajouter.
      * @param classmt Le classement de l'équipe.
      */
-        if (!(this.classement.contient(equipe))){
+        if (!(this.contient(equipe))){
             Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, equipe);
             this.classement.add(scr);
         }
@@ -57,12 +57,12 @@ public class Epreuve {
      * @param classmt Le classement de l'équipe.
      * @param pointsOuTemps Les points ou le temps de l'équipe.
      */
-        if (!(this.classement.contient(equipe))){
+        if (!(this.contient(equipe))){
             Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, pointsOuTemps, equipe);
             this.classement.add(scr);
         }
     }
-    public void modifScore(Equipe equipe, int score){
+    public void modifScore(Equipe equipe, double score){
         /**
      * Modifie le score d'une équipe participante.
      *
@@ -70,7 +70,7 @@ public class Epreuve {
      * @param score Le nouveau score de l'équipe.
      */
         for(Score<Integer, Double, Equipe> sc : this.classement){
-            if(sc.getParticipant().equals(Equipe)){
+            if(sc.getParticipant().equals(equipe)){
                 sc.setScore(score);
             }
         }
