@@ -131,3 +131,4 @@ public class Score<Integer, Double, Equipe> {
         return true;
     }
 }
+

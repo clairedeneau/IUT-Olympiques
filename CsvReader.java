@@ -74,11 +74,43 @@ public class CsvReader{
         st.executeUpdate(requete);
 	}  
 
-    void ajouterEpreuve(Epreuve epreuve, int id) throws  SQLException{
+    void ajouterEpreuve(Epreuve epreuve, int id, String sport) throws  SQLException{
 		st=laConnexion.createStatement();
-        String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+"faut récupérer id sport"+")";
-        System.out.println(requete);
-        st.executeUpdate(requete);
+        if(sport.equals("Natation")){
+            String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+1+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+        if(sport.equals("Escrime")){
+            String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+2+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+        if(sport.equals("Volley-Ball")){
+            String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+3+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+        if(sport.equals("Handball")){
+            String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+4+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+        if(sport.equals("Athletisme")){
+            String requete = "insert into EPREUVE values("+id+",'"+epreuve.getNom()+"','"+epreuve.getSexe()+"',"+5+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+	}  
+
+    void ajouterNatation(Sport sport, String epreuve) throws  SQLException{
+        if(sport.getNom().equals("Natation") && (!(jo.getListeSport().contains(sport)))){
+            st=laConnexion.createStatement();
+            String requete = "insert into NATATION values("+"Natation"+",'"+100+"','"+3+"',"+1+")";
+            System.out.println(requete);
+            st.executeUpdate(requete);
+        }
+
 	}  
 
     

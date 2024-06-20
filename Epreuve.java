@@ -36,43 +36,43 @@ public class Epreuve {
         return false;
     }
 
-    // public void participer(Equipe equipe, int classmt){
-    //     /**
-    //  * Ajoute une équipe au classement de l'épreuve avec son classement.
-    //  *
-    //  * @param equipe L'équipe à ajouter.
-    //  * @param classmt Le classement de l'équipe.
-    //  */
-    //     if (!(this.classement.contient(equipe))){
-    //         Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, equipe);
-    //         this.classement.add(scr);
-    //     }
-    // }
+    public void participer(Equipe equipe, int classmt){
+        /**
+     * Ajoute une équipe au classement de l'épreuve avec son classement.
+     *
+     * @param equipe L'équipe à ajouter.
+     * @param classmt Le classement de l'équipe.
+     */
+        if (!(this.classement.contient(equipe))){
+            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, equipe);
+            this.classement.add(scr);
+        }
+    }
 
-    // public void participer(Equipe equipe, int classmt, double pointsOuTemps){
-    //     /**
-    //  * Ajoute une équipe au classement de l'épreuve avec son classement et ses points ou son temps.
-    //  *
-    //  * @param equipe L'équipe à ajouter.
-    //  * @param classmt Le classement de l'équipe.
-    //  * @param pointsOuTemps Les points ou le temps de l'équipe.
-    //  */
-    //     if (!(this.classement.contient(equipe))){
-    //         Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, pointsOuTemps, equipe);
-    //         this.classement.add(scr);
-    //     }
-    // }
-    // public void modifScore(Equipe equipe, int score){
-    //     /**
-    //  * Modifie le score d'une équipe participante.
-    //  *
-    //  * @param equipe L'équipe dont le score doit être modifié.
-    //  * @param score Le nouveau score de l'équipe.
-    //  */
-    //     for(Score<Integer, Double, Equipe> sc : this.classement){
-    //         if(sc.getParticipant().equals(Equipe)){
-    //             sc.setScore(score);
-    //         }
-    //     }
-    // }
+    public void participer(Equipe equipe, int classmt, double pointsOuTemps){
+        /**
+     * Ajoute une équipe au classement de l'épreuve avec son classement et ses points ou son temps.
+     *
+     * @param equipe L'équipe à ajouter.
+     * @param classmt Le classement de l'équipe.
+     * @param pointsOuTemps Les points ou le temps de l'équipe.
+     */
+        if (!(this.classement.contient(equipe))){
+            Score<Integer, Double, Equipe> scr = new Score<Integer, Double, Equipe>(classmt, pointsOuTemps, equipe);
+            this.classement.add(scr);
+        }
+    }
+    public void modifScore(Equipe equipe, int score){
+        /**
+     * Modifie le score d'une équipe participante.
+     *
+     * @param equipe L'équipe dont le score doit être modifié.
+     * @param score Le nouveau score de l'équipe.
+     */
+        for(Score<Integer, Double, Equipe> sc : this.classement){
+            if(sc.getParticipant().equals(Equipe)){
+                sc.setScore(score);
+            }
+        }
+    }
 }
