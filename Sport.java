@@ -7,7 +7,7 @@ public abstract class Sport {
     protected String nom;
     protected int tailleEquipe;
     protected int placeSpectateur;
-    protected String nom;
+
 
     /**
      * Constructeur de la classe Sport.

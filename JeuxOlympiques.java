@@ -162,19 +162,19 @@ public class JeuxOlympiques {
     public void ajouteSport(String nom) {
         Sport nouveauSport = null;
         if (nom.equals("Natation")) {
-            nouveauSport = new Natation(0, 0, 0, 0);
+            nouveauSport = new Natation(0, nom, 0, 0, 0);
         }
         if (nom.equals("Handball")) {
-            nouveauSport = new Handball(0, 0, 0, 0);
+            nouveauSport = new Handball(nom, 0, 0, 0, 0);
         }
         if (nom.equals("Volley-Ball")) {
-            nouveauSport = new VolleyBall(0, 0, 0, 0, false, false);    
+            nouveauSport = new VolleyBall(nom, 0, 0, 0, 0, false, false);    
         }
         if (nom.equals("Escrime")) {
-            nouveauSport = new Escrime(0, 0, false, false, false);
+            nouveauSport = new Escrime(nom, 0, 0, false, false, false);
         }
         if (nom.equals("Athlétisme")) {
-            nouveauSport = new Athletisme(0, 0, 0, false);
+            nouveauSport = new Athletisme(0, nom, 0, 0, false);
         if((!(nouveauSport == null)) && (!(listeSports.contains(nouveauSport)))){
             listeSports.add(nouveauSport); 
         }
