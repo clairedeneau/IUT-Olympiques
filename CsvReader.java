@@ -34,6 +34,7 @@ public class CsvReader{
                 this.jo.ajouteSport(sport);
                 this.jo.ajoutePays(pays);
                 Athlete atl = new Athlete(nom, prenom, sexe, this.jo.getPaysByNom(pays), epreuve, Integer.parseInt(force), Integer.parseInt(endurance), Integer.parseInt(agilite), sport);
+                this.ajouterAthlete(atl, i);
                 this.jo.getPaysByNom(pays).ajouteAthlete(atl);
                 i++;
        
@@ -41,7 +42,10 @@ public class CsvReader{
             scan.close();
         }catch(FileNotFoundException ex){
             System.out.println("le fichier n’existe pas");
+        }catch(SQLException sqlException){
+            System.out.println(sqlException);
         }
+        
         
     }
 
@@ -105,17 +109,86 @@ public class CsvReader{
 
     void ajouterNatation(Sport sport, String epreuve) throws  SQLException{
         if(sport.getNom().equals("Natation") && (!(jo.getListeSport().contains(sport)))){
-            st=laConnexion.createStatement();
-            String requete = "insert into NATATION values("+"Natation"+",'"+100+"','"+3+"',"+1+")";
-            System.out.println(requete);
-            st.executeUpdate(requete);
+            if(epreuve.equals("Natation 100 brasse")){
+                st=laConnexion.createStatement();
+                String requete = "insert into NATATION values("+epreuve+",'"+100+"','"+3+"',"+1+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+            if(epreuve.equals("Natation relais libre")){
+                st=laConnexion.createStatement();
+                String requete = "insert into NATATION values("+epreuve+",'"+10000+"','"+3+"',"+1+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
         }
-
 	}  
 
-    
+    void ajouterEscrime(Sport sport, String epreuve) throws  SQLException{
+        if(sport.getNom().equals("Escrime") && (!(jo.getListeSport().contains(sport)))){
+            if(epreuve.equals("Escrime fleuret")){
+                st=laConnexion.createStatement();
+                String requete = "insert into ESCRIME values("+epreuve+",'"+true+"','"+false+"','"+false+"',"+2+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+            if(epreuve.equals("Escrime épée")){
+                st=laConnexion.createStatement();
+                String requete = "insert into ESCRIME values("+epreuve+",'"+false+"','"+true+"','"+false+"',"+2+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+            if(epreuve.equals("Escrime sabre")){
+                st=laConnexion.createStatement();
+                String requete = "insert into ESCRIME values("+epreuve+",'"+false+"','"+false+"','"+true+"',"+2+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+        }
+	}  
 
+    void ajouterVolley(Sport sport, String epreuve) throws  SQLException{
+        if(sport.getNom().equals("Volley-Ball") && (!(jo.getListeSport().contains(sport)))){
+            if(epreuve.equals("Volley-Ball Sable")){
+                st=laConnexion.createStatement();
+                String requete = "insert into VOLLEY values("+epreuve+",'"+9+"','"+18+"','"+true+"','"+false+"',"+3+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+            if(epreuve.equals("Volley-Ball Salle")){
+                st=laConnexion.createStatement();
+                String requete = "insert into VOLLEY values("+epreuve+",'"+9+"','"+18+"','"+false+"','"+true+"',"+3+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+        }
+    }
 
+    void ajouterHandball(Sport sport) throws  SQLException{
+        if(sport.getNom().equals("Handball") && (!(jo.getListeSport().contains(sport)))){
+                st=laConnexion.createStatement();
+                String requete = "insert into HANDBALL values("+sport+",'"+20+"','"+40+"',"+3+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+        }
+    }
+
+    void ajouterAthletisme(Sport sport, String epreuve) throws  SQLException{
+        if(sport.getNom().equals("Athletisme") && (!(jo.getListeSport().contains(sport)))){
+            if(epreuve.equals("Athétisme 110 haies")){
+                st=laConnexion.createStatement();
+                String requete = "insert into ATHLETISME values("+epreuve+",'"+110+"','"+true+"',"+1+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+            if(epreuve.equals("Athlétisme relais 400m")){
+                st=laConnexion.createStatement();
+                String requete = "insert into ATHLETISME values("+epreuve+",'"+400+"','"+false+"',"+1+")";
+                System.out.println(requete);
+                st.executeUpdate(requete);
+            }
+        }
+	}  
 
 
 
