@@ -221,5 +221,13 @@ public class Athlete implements Util {
                 + ", nom=" + nom + ", prenom=" + prenom + ", nbVictoire=" + nbVictoire + "]";
     }
 
+    public Sport getSport() {
+        return sport;
+    }
+
+    public void setSport(Sport sport) {
+        this.sport = sport;
+    }
+
     
 }

@@ -89,12 +89,12 @@ public class IUTO extends Application {
         loader.setController(controleurOrganisateurAccueil);
         BorderPane root = loader.load();
         this.cbSport = (ComboBox<Sport>) root.lookup("#cbSport");
-        Sport centM = new Athletisme(0, "100 metres", 0, 0, false);
-        Sport centDixM = new Athletisme(0, "110 metres haies", 0, 0, true);
+        Sport centM = new Athletisme(100, "100 metres", 1, 1000, false);
+        Sport centDixM = new Athletisme(110, "110 metres haies", 1, 1000, true);
         Sport volley = new VolleyBall("Volley", 10, 10, 6, 100, true, false);
-        Sport natation = new Natation(0, "100 metres crawl", 0, 0, 0);
-        Sport hand = new Handball("Handball", 0, 0, 0, 0);
-        Sport escrime = new Escrime("Escrime", 0, 0, false, false, true);
+        Sport natation = new Natation(100, "100 metres crawl", 1, 100, 3);
+        Sport hand = new Handball("Handball", 5, 40, 20, 1000);
+        Sport escrime = new Escrime("Escrime", 1, 1000, false, false, true);
         this.cbSport.getItems().addAll(centM,centDixM,volley, natation, hand, escrime);
         return root;
         
