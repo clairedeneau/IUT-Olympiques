@@ -228,13 +228,6 @@ public class Athlete implements Util {
     }
 
 
-    public Sport getSport() {
-        return sport;
-    }
-
-    public void setSport(Sport sport) {
-        this.sport = sport;
-    }
 
 
     public String getEpreuve() {
