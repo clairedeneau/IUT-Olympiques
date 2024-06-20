@@ -6,6 +6,7 @@ public abstract class Sport {
 
     protected int tailleEquipe;
     protected int placeSpectateur;
+    protected String nom;
 
     /**
      * Constructeur de la classe Sport.
@@ -13,9 +14,10 @@ public abstract class Sport {
      * @param tailleEquipe    le nombre de joueurs par équipe
      * @param placeSpectateur le nombre de places disponibles pour les spectateurs
      */
-    public Sport(int tailleEquipe, int placeSpectateur) {
+    public Sport(String nom, int tailleEquipe, int placeSpectateur) {
         this.tailleEquipe = tailleEquipe;
         this.placeSpectateur = placeSpectateur;
+        this.nom = nom;
     }
 
     /**
@@ -53,4 +55,11 @@ public abstract class Sport {
     public void setPlaceSpectateur(int placeSpectateur) {
         this.placeSpectateur = placeSpectateur;
     }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
+
+    
 }

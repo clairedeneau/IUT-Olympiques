@@ -15,10 +15,10 @@ public class Athletisme extends Sport{
      * @param courseHaie indique si la course comporte des haies
      */
     public Athletisme(int distance, String nom, int tailleEquipe, int placeSpectateur, boolean courseHaie){
-        super(tailleEquipe, placeSpectateur);
+        super(nom, tailleEquipe, placeSpectateur);
         this.distance = distance;
         this.courseHaie = courseHaie;
-        this.nom = "Athlétisme";
+
     }
 
     /**

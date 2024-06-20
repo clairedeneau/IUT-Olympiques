@@ -17,7 +17,7 @@ public class Escrime extends Sport{
      * @param sabre indique si le sabre est utilisé
      */
     public Escrime(String nom, int tailleEquipe, int placeSpectateur, boolean fleuret, boolean epee, boolean sabre){
-        super(tailleEquipe, placeSpectateur);
+        super(nom, tailleEquipe, placeSpectateur);
         this.fleuret = fleuret;
         this.epee = epee;
         this.sabre = sabre;

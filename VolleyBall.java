@@ -19,7 +19,7 @@ public class VolleyBall extends Sport{
      * @param salleTerrain indique si le terrain est en salle
      */
     public VolleyBall(String nom, int tailleEquipe, int largeurTerrain, int longueurTerrain, int placeSpectateur, boolean sableTerrain, boolean salleTerrain){
-        super(tailleEquipe, placeSpectateur);
+        super(nom, tailleEquipe, placeSpectateur);
         this.sableTerrain = sableTerrain;
         this.salleTerrain = salleTerrain;
         this.largeurTerrain = largeurTerrain;

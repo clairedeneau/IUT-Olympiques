@@ -15,7 +15,7 @@ public class Natation extends Sport{
      * @param profondeurPiscine la profondeur de la piscine utilisée
      */
     public Natation(int distance, String nom, int tailleEquipe, int placeSpectateur, int profondeurPiscine){
-        super(tailleEquipe, placeSpectateur);
+        super(nom, tailleEquipe, placeSpectateur);
         this.distance = distance;
         this.nom = "Natation";
         this.profondeurPiscine = profondeurPiscine;
