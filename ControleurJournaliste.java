@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,7 +50,11 @@ public class ControleurJournaliste {
     }
 
     @FXML
-    private void init(){};
+    private void init() throws ClassNotFoundException, SQLException{
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test);
+    };
 
     @FXML
     private void handleAccueil(ActionEvent event) throws IOException {

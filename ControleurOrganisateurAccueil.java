@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,6 +72,16 @@ public class ControleurOrganisateurAccueil {
     private void handleEpreuve(ActionEvent event) throws IOException {
             vue.modeOrganisateurEpreuve();
     }
+
+    @FXML
+    private void handleCreeEpreuve(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test);
+        
+        
+    }
+
 
     public ImageView getImageProfil() {
         return imageProfil;

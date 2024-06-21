@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,8 +94,24 @@ public class ControleurAdminAthlete {
     }
 
     @FXML
-    private void handleEnregistrer(ActionEvent event) throws IOException {
-        
+    private void handleEnregistrer(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test); 
+        String role;
+        role = "test";
+        if (rbFemme.isSelected()) {
+            role = "F";
+        }
+        else {
+            role = "M";
+        }
+        int force =  (int) spinnerForce.getValue();
+        int agilite =  (int) spinnerAgilite.getValue();
+        int endurance =  (int) spinnerEndur.getValue();
+        int victoire =  (int) spinnerNbVict.getValue();
+
+        coo.modifAthlete(1,tfNom.getText(), tfPrenom.getText(), role, force, agilite, endurance, victoire, tfPays.getText());
     }
 
     @FXML
