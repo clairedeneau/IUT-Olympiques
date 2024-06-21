@@ -115,6 +115,14 @@ public class IUTO extends Application {
         loader.setControllerFactory(c -> new ControleurJournaliste(this));
         loader.setController(controleurJournaliste);
         BorderPane root = loader.load();
+        this.cbSport = (ComboBox<Sport>) root.lookup("#comboBoxSports");
+        Sport centM = new Athletisme(100, "100 metres", 1, 1000, false);
+        Sport centDixM = new Athletisme(110, "110 metres haies", 1, 1000, true);
+        Sport volley = new VolleyBall("Volley", 10, 10, 6, 100, true, false);
+        Sport natation = new Natation(100, "100 metres crawl", 1, 100, 3);
+        Sport hand = new Handball("Handball", 5, 40, 20, 1000);
+        Sport escrime = new Escrime("Escrime", 1, 1000, false, false, true);
+        this.cbSport.getItems().addAll(centM,centDixM,volley, natation, hand, escrime);
         return root;
     }
     
@@ -131,6 +139,14 @@ public class IUTO extends Application {
         loader.setControllerFactory(c -> new ControleurConnexion(this));
         loader.setController(controleurAdminPrincipale);
         BorderPane root = loader.load();
+        this.cbSport = (ComboBox<Sport>) root.lookup("#comboBoxSports");
+        Sport centM = new Athletisme(100, "100 metres", 1, 1000, false);
+        Sport centDixM = new Athletisme(110, "110 metres haies", 1, 1000, true);
+        Sport volley = new VolleyBall("Volley", 10, 10, 6, 100, true, false);
+        Sport natation = new Natation(100, "100 metres crawl", 1, 100, 3);
+        Sport hand = new Handball("Handball", 5, 40, 20, 1000);
+        Sport escrime = new Escrime("Escrime", 1, 1000, false, false, true);
+        this.cbSport.getItems().addAll(centM,centDixM,volley, natation, hand, escrime);
         return root;
     }
 
@@ -189,7 +205,7 @@ public class IUTO extends Application {
     
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        connexionMySQL.connecter("servinfo-maria", "DBdeneau", "deneau", "deneau");
+        connexionMySQL.connecter("servinfo-maria", "DBdore", "dore", "dore");
         modeAccueil();
         stage.setTitle("Jeux Olympiques 2024");
         Scene scene = new Scene(this.panelCentral, 600, 600);

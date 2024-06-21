@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,10 +45,13 @@ public class ControleurAdminPays {
 
     public ControleurAdminPays(IUTO vue) {
         this.vue = vue;
+        
     }
 
     @FXML
-    private void init(){};
+    private void init() {
+        
+    };
 
     @FXML
     private void handleAccueil(ActionEvent event) throws IOException {
@@ -55,7 +59,14 @@ public class ControleurAdminPays {
     }
 
     @FXML
-    private void handleEnregistrer(ActionEvent event) throws IOException {
+    private void handleEnregistrer(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test); 
+        int or =  (int) spinnerOr.getValue();
+        int ar =  (int) spinnerArgent.getValue();
+        int br =  (int) spinnerBronze.getValue();
+        coo.modifPays(tfNom.getText(), tfNom.getText(), or, ar, br);
         
     }
 

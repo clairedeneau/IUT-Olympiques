@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,8 +32,28 @@ public class ControleurConnexion {
     private void init(){};
 
     @FXML
-    private void handleConnexion(ActionEvent event) throws IOException {
-        vue.modeAdminPrincipale();
+    private void handleConnexion(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test);
+        String role;
+        role = coo.getRoleUser(tfUser.getText(), pwUser.getText());
+        System.out.println(role);
+           
+        if (role.equals("A")) {
+            vue.modeAdminPrincipale();
+            System.out.println("bien ouej");
+        }
+        else if (role.equals("U")) {
+            vue.modeJournaliste();
+            System.out.println("bien ouej");
+
+        }
+        else if (role.equals("O")) {
+            vue.modeOrganisateurAccueil();
+            System.out.println("bien ouej");
+
+        }      
     }
 
     @FXML

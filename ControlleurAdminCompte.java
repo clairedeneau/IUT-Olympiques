@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,8 +69,22 @@ public class ControlleurAdminCompte {
     }
 
     @FXML
-    private void handleEnregistrer(ActionEvent event) throws IOException {
-            
+    private void handleEnregistrer(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
+        ConnexionMySQL test = new ConnexionMySQL();
+        test.connecter("servinfo-maria", "DBdore", "dore", "dore");
+        Jdbc coo = new Jdbc(test);  
+        String role;   
+        role = "test";
+        if (rbJourn.isSelected()) {
+            role = "U";
+        }
+        else if (rbOrga.isSelected()) {
+            role = "O";
+        }
+        else if (rbAdmin.isSelected()) {
+            role = "A";
+        }
+        coo.nvCompte(tfUserName.getText(), tfMdp1.getText(), role);
     }
 
     @FXML  
