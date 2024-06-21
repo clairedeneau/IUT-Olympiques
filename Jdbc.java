@@ -188,5 +188,12 @@ public class Jdbc {
      	String requete = "UPDATE EQUIPE SET Nb_Victoires = "+eq.getNbVictoire()+" WHERE Nom_Equipe = '"+eq.getNom()+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
-    }    
+    }
+    
+    public void modifParticiper(Score sc, int idEquipe, int idEpreuve){
+        st = connexion.createStatement();
+     	String requete = "UPDATE PARTICIPER SET Position = "+sc.getPosition()+", Score = "+sc.getScore()+" WHERE Id_Equipe = '"+idEquipe+"' WHERE Id_Epreuve = '"+idEpreuve+"'";
+		System.out.println(requete);
+		st.executeUpdate(requete);
+    }
 }
