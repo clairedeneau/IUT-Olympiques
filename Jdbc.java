@@ -169,28 +169,28 @@ public class Jdbc {
 		st.executeUpdate(requete);
     }
 
-    public void modifMedailles(Pays pays){
+    public void modifMedailles(Pays pays)throws SQLException{
         st = connexion.createStatement();
      	String requete = "UPDATE PAYSJO SET Nb_médailles_or = "+pays.getNbMedailleOr()+", Nb_Médailles_argent = "+pays.getNbMedailleArgent()+", Nb_Médailles_bronze = "+pays.getNbMedailleBronze()+" WHERE Nom_pays = '"+pays.getNom()+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
-    public void modifVictoires(Athlete atl){
+    public void modifVictoires(Athlete atl)throws SQLException{
         st = connexion.createStatement();
      	String requete = "UPDATE ATHLETES SET Nb_Victoires_Athlète = "+atl.getNbVictoire()+" WHERE Nom = '"+atl.getNom()+"' AND Prenom = '"+atl.getPrenom()+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
 
-    public void modifVictoires(Equipe eq){
+    public void modifVictoires(Equipe eq)throws SQLException{
         st = connexion.createStatement();
      	String requete = "UPDATE EQUIPE SET Nb_Victoires = "+eq.getNbVictoire()+" WHERE Nom_Equipe = '"+eq.getNom()+"'";
 		System.out.println(requete);
 		st.executeUpdate(requete);
     }
     
-    public void modifParticiper(Score sc, int idEquipe, int idEpreuve){
+    public void modifParticiper(Score sc, int idEquipe, int idEpreuve)throws SQLException{
         st = connexion.createStatement();
      	String requete = "UPDATE PARTICIPER SET Position = "+sc.getPosition()+", Score = "+sc.getScore()+" WHERE Id_Equipe = '"+idEquipe+"' WHERE Id_Epreuve = '"+idEpreuve+"'";
 		System.out.println(requete);
