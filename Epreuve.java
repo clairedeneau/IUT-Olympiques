@@ -76,38 +76,82 @@ public class Epreuve {
         }
     }
 
+    /**
+     * Obtient le nom de l'épreuve.
+     * 
+     * @return Le nom de l'épreuve.
+     */
     public String getNom() {
         return nom;
     }
 
+    /**
+     * Définit le nom de l'épreuve.
+     * 
+     * @param nom Le nom à définir pour l'épreuve.
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+     /**
+     * Obtient le sexe des participants de l'épreuve.
+     * 
+     * @return Le sexe des participants.
+     */
     public char getSexe() {
         return sexe;
     }
 
+    /**
+     * Définit le sexe des participants de l'épreuve.
+     * 
+     * @param sexe Le sexe à définir pour les participants.
+     */
     public void setSexe(char sexe) {
         this.sexe = sexe;
     }
 
+     /**
+     * Obtient le classement des participants de l'épreuve.
+     * 
+     * @return Une liste de scores représentant le classement.
+     */
     public List<Score<Integer, Double, Equipe>> getClassement() {
         return classement;
     }
 
+    /**
+     * Définit le classement des participants de l'épreuve.
+     * 
+     * @param classement Une liste de scores représentant le classement à définir.
+     */
     public void setClassement(List<Score<Integer, Double, Equipe>> classement) {
         this.classement = classement;
     }
 
+    /**
+     * Obtient le sport de l'épreuve.
+     * 
+     * @return Le sport de l'épreuve.
+     */
     public Sport getSport() {
         return sport;
     }
 
+    /**
+     * Définit le sport de l'épreuve.
+     * 
+     * @param sport Le sport à définir pour l'épreuve.
+     */
     public void setSport(Sport sport) {
         this.sport = sport;
     }
     
+    /**
+     * Lance l'épreuve et met à jour le classement et les scores des participants.
+     * Met également à jour le nombre de médailles des pays correspondants.
+     */
     public void lancer(){
         int place = 1;
         int score = 100;
